@@ -1,0 +1,374 @@
+<html>
+
+<head><title="HB-Web"><meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link type="text/css" rel="stylesheet" href="styles.css">
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+   <script src="http://code.jquery.com/jquery-migrate-1.1.0.js"></script>
+  <h1>Resume Authoring</h1><br></br>
+
+
+</head>
+
+<body>
+
+
+  <script type="text/javascript">
+
+    function toggleVisibility(id) {
+
+             var dom = document.getElementById(id);
+
+             if (dom.style.visibility != "hidden") {
+               dom.style.visibility = "hidden";
+               dom.style.height = "0px";
+
+             } else if (dom.style.visibility == "hidden") {
+               dom.style.visibility = "visible";
+               dom.style.height = "auto";
+             }
+           }
+
+
+
+     function input(){
+
+       var re_firstName = document.getElementById("first_name").value;
+       var re_lastName = document.getElementById("Last_name").value;
+       var re_phone = document.getElementById("phone").value;
+       var re_email = document.getElementById("mail").value;
+       var re_address = document.getElementById("address").value;
+
+       var re_goal = document.getElementById("goal").value;
+
+       var edu_length = $('#edu_entry tbody tr').length;
+       var exp_length = $('#exp_entry tbody tr').length;
+       var ski_length = $('#skill_entry tbody tr').length;
+
+       var re_bg = document.getElementById("bgcolor").value;
+       var re_fc = document.getElementById("fcolor").value;
+       var re_fs = document.getElementById("pont").value;
+       re_fs += "em";
+
+
+       var re_education = "";
+
+       for (i = 1; i < edu_length + 1; i++) {
+         var id_school = "school" + i;
+         re_education += document.getElementById(id_school).value;
+         var id_major = "major" + i;
+         re_education += document.getElementById(id_major).value;
+         var id_addm = "addm" + i;
+         re_education += "  (" + document.getElementById(id_addm).value;
+         var id_grad = "grad" + i;
+         re_education += "~" + document.getElementById(id_grad).value;
+         var id_gpa = "gpa" + i;
+         re_education += ")  GPA: " + document.getElementById(id_gpa).value;
+         re_education += "<br>";
+       }
+
+       var re_experience = "";
+       for (i = 1; i < exp_length + 1; i++) {
+         var id_organization = "org" + i;
+         re_experience += document.getElementById(id_organization).value + " ";
+         var id_duty = "duty" + i;
+         re_experience += document.getElementById(id_duty).value;
+         var id_start = "start" + i;
+         re_experience += "  (" + document.getElementById(id_start).value;
+         var id_finish = "finish" + i;
+         re_experience += "~" + document.getElementById(id_finish).value + ")";
+         re_experience += "<br>";
+       }
+
+
+       var re_skill = "";
+       for (i = 1; i < ski_length + 1; i++) {
+         var id_field = "field" + i;
+         re_skill += document.getElementById(id_field).value;
+         var id_detail = "detail" + i;
+         re_skill += "  (" + document.getElementById(id_detail).value + ")";
+         re_skill += "<br>";
+       }
+
+
+
+        document.getElementById("resume_name").innerHTML = re_firstName + " " + re_lastName;
+        document.getElementById("resume_phone").innerHTML = re_phone;
+        document.getElementById("resume_email").innerHTML = re_email;
+        document.getElementById("resume_address").innerHTML = re_address;
+        document.getElementById("resume_obj").innerHTML = re_goal;
+
+        document.getElementById("resume_edu").innerHTML = re_education;
+        document.getElementById("resume_exp").innerHTML = re_experience;
+        document.getElementById("resume_ski").innerHTML = re_skill;
+
+        document.getElementById("result").style.backgroundColor = re_bg;
+        document.getElementById("result").style.color = re_fc;
+        document.getElementById("forFontSize").style.fontSize = re_fs;
+
+        toggleVisibility("section");
+        toggleVisibility("result");
+
+     }
+
+
+
+   </script>
+
+   <div id="section">
+     <nav>
+     Insert Information
+     </nav>
+     <div class="bb1">
+      Last Name <input type="text" id="Last_name" placeholder="" ><br>
+      First Name <input type="text" id="first_name"><br>
+      Email <input type="email" id="mail" placeholder="you@example.com"><br>
+      Phone Number <input type="tel" id="phone" placeholder="***-****-****"><br>
+      Adrress <input type="text" id="address"><br>
+      Career goal <input type="text" id="goal" size="40"placeholder="one sentence"><br>
+
+      <script type="text/javascript">
+
+        function LoadImg(value) {
+          if (value.files && value.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+              $('#resume_photo').attr('src', e.target.result);
+            }
+            reader.readAsDataURL(value.files[0]);
+          }
+        }
+      </script>
+
+      Image Load <input type="file" id="imgAttach" name="imgAttach" onchange="LoadImg(this);">
+      <br>
+
+      Education
+      <div class="bb2">
+      <table id="edu_entry">
+        <thead>
+          <td>School Name</td>
+          <td>Major</td>
+          <td>Entrance</td>
+          <td>Graduation</td>
+          <td>Grade</td>
+        </thead>
+        <tbody>
+          <tr>
+            <td><input type="text" id="school1" size="20" value="" /></td>
+            <td><input type="text" id="major1" size="20" value="" /></td>
+            <td><input type="date" id="addm1" value="" /></td>
+            <td><input type="date" id="grad1" value="" /></td>
+            <td><input type="text" id="gpa1" size="20" value="" /></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <input type="button" id="edu_add" onclick="button1_click();" value="More" />
+      <input type="button" id="edu_rem" onclick="button4_click();" value="Delete" />
+    </div>
+
+      <script>
+        function button1_click() {
+          var entryNum = $('#edu_entry tbody tr').length;
+          entryNum++;
+          var rowItem = "<tr>";
+          rowItem += "<td><input type=\"text\" id=\"school";
+          rowItem += entryNum;
+          rowItem += "\" size=\"30\"/></td>";
+          rowItem += "<td><input type=\"text\" id=\"major";
+          rowItem += entryNum;
+          rowItem += "\" size=\"30\"/></td>";
+          rowItem += "<td><input type=\"date\" id=\"addm";
+          rowItem += entryNum;
+          rowItem += "\"/></td>";
+          rowItem += "<td><input type=\"date\" id=\"grad";
+          rowItem += entryNum;
+          rowItem += "\"/></td>";
+          rowItem += "<td><input type=\"text\" id=\"gpa";
+          rowItem += entryNum;
+          rowItem += "\" size=\"30\"/></td>";
+          rowItem += "</tr>";
+          $('#edu_entry').append(rowItem);
+        }
+
+        function button4_click() {
+          if ($('#edu_entry tbody tr').length > 1) {
+            $('#edu_entry tr:last').remove();
+          } else {
+            alert($('#edu_entry tbody tr').length + 'No entry in a education section!');
+          }
+        }
+      </script><br>
+
+      Experience
+      <div class="bb2">
+      <table id="exp_entry">
+        <thead>
+          <td>Organization</td>
+          <td>Duty</td>
+          <td>Duration</td>
+        </thead>
+        <tbody>
+          <tr>
+            <td><input type="text" id="org1" size="20" /></td>
+            <td><input type="text" id="duty1" size="20" /></td>
+            <td><input type="date" id="start1" />~<input type="date" id="finish1" /></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <input type="button" id="exp_add" onclick="button2_click();" value="More" />
+      <input type="button" id="exp_rem" onclick="button5_click();" value="Delete" />
+   </div>
+      <script>
+
+        function button2_click() {
+          var ex_entryNum = $('#exp_entry tbody tr').length;
+          ex_entryNum++;
+          var rowItem = "<tr>";
+          rowItem += "<td><input type=\"text\" id=\"org";
+          rowItem += ex_entryNum;
+          rowItem += "\" size=\"30\"/></td>";
+          rowItem += "<td><input type=\"text\" id=\"duty";
+          rowItem += ex_entryNum;
+          rowItem += "\" size=\"30\"/></td>";
+          rowItem += "<td><input type=\"date\" id=\"start";
+          rowItem += ex_entryNum;
+          rowItem += "\"/>~<input type=\"date\" id=\"finish";
+          rowItem += ex_entryNum;
+          rowItem += "\"/></td>";
+          rowItem += "</tr>";
+          $('#exp_entry').append(rowItem);
+        }
+
+        function button5_click() {
+          if ($('#exp_entry tbody tr').length > 1) {
+            $('#exp_entry tr:last').remove();
+          } else {
+            alert('No entry in a experience section!');
+          }
+        }
+      </script><br>
+
+      Skills
+      <div class="bb2">
+      <table id="skill_entry">
+        <thead>
+          <td>Filed</td>
+          <td>Detail</td>
+        </thead>
+        <tbody>
+          <tr>
+            <td><input type="text" id="field1" size="30" /></td>
+            <td><input type="text" id="detail1" size="60" /></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <input type="button" id="skill_add" onclick="button3_click();" value="More" />
+      <input type="button" id="skill_rem" onclick="button6_click();" value="Delete" />
+        </div>
+      <script>
+        function button3_click() {
+          var sk_entryNum = $('#skill_entry tbody tr').length;
+          sk_entryNum++;
+          var rowItem = "<tr>";
+          rowItem += "<td><input type=\"text\" id=\"field";
+          rowItem += sk_entryNum;
+          rowItem += "\" size=\"30\"/></td>";
+          rowItem += "<td><input type=\"text\" id=\"detail";
+          rowItem += sk_entryNum;
+          rowItem += "\" size=\"60\"/></td>";
+          rowItem += "</tr>";
+          $('#skill_entry').append(rowItem);
+        }
+
+        function button6_click() {
+          if ($('#skill_entry tbody tr').length > 1) {
+            $('#skill_entry tr:last').remove();
+          } else {
+            alert('No entry in a skill section!');
+          }
+        }
+      </script>
+      <br>
+      Format/style Options
+      <div class="bb2">
+      <table>
+        <tr>
+          <td>Background Color</td>
+          <td><input type="color" id="bgcolor" value="#ffffff" /></td>
+        </tr>
+        <tr>
+          <td>Letter Color</td>
+          <td><input type="color" id="fcolor" /></td>
+        </tr>
+        <tr>
+          <td>Letter Size</td>
+          <td>Small<input type="range" id="pont" min="0" max="3" value="1" step="0.1" />Big
+          </td>
+        </tr>
+      </table>
+    </div>
+      <div class="center">
+      <p style= "text-align:center;">
+
+      <input type="reset" value="Reset" style="font-size:1em;background:Pink;padding: 5px;">
+      <button onclick="input()" style="font-size:1em; background:Skyblue;padding: 5px;" >submit</button>
+     </p>
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+   <section id="result" style="width: 100%; border: 2px solid black; margin: 40px auto; visibility: hidden; height: 0px; width: 800px;">
+     <div style="text-align: center;">
+       <h3>RESUME</h3>
+       <hr>
+     </div>
+     <div id="forFontSize">
+       <div style="display:inline-block">
+         <div style="height: auto; width: 560px; float: left; margin: 5px 10px">
+           <center><img id="resume_photo" src="" alt="사진" width="70%"/></center>
+         </div>
+         <div style="float: left; width: 240px">
+           <strong><u><p id="resume_name" style="margin: 1px">이름</p></u></strong>
+           <span><STRONG>&nbsp;연락처 </STRONG></span><br>
+           <span>&nbsp;핸드폰 : </span><span id="resume_phone">핸드폰</span><br>
+           <span>&nbsp;E-mail : </span><span id="resume_email">이메일</span><br>
+           <span>&nbsp;주소 : </span><span id="resume_address">주소</span><br>
+         </div>
+       </div>
+       <hr>
+       <span>&nbsp; 목표</span><br>
+       <p id="resume_obj">목표</p>
+       <hr>
+       <span>&nbsp; 학력 </span>
+       <p id="resume_edu">학적</p>
+       <hr>
+       <span>&nbsp; 경력 </span>
+       <p id="resume_exp">경력</p>
+       <hr>
+       <span>&nbsp; 자격증 </span>
+       <p id="resume_ski">자격증</p>
+       <hr>
+     </div>
+   </section>
+
+</body>
+
+
+<!--<footer></footer>-->
+<div class='container'>
+<center>Copyright (c) <a href="https://blog.naver.com/ihanbin">BIN blog</a> All rights reserved.</center>
+</div>
+
+
+</html>

@@ -1,0 +1,143 @@
+<html>
+
+<head><title="HB-Web"><meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link type="text/css" rel="stylesheet" href="styles.css">
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+   <script src="http://code.jquery.com/jquery-migrate-1.1.0.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+  <h1>Resume Authoring</h1><br></br>
+
+</head>
+
+<body>
+
+
+
+  <script type="text/javascript">
+
+    function toggleVisibility(id) {
+
+             var dom = document.getElementById(id);
+
+             if (dom.style.visibility != "hidden") {
+               dom.style.visibility = "hidden";
+               dom.style.height = "0px";
+
+             } else if (dom.style.visibility == "hidden") {
+               dom.style.visibility = "visible";
+               dom.style.height = "auto";
+             }
+           }
+
+
+
+     function input(){
+
+       var re_firstName = document.getElementById("first_name").value;
+       var re_lastName = document.getElementById("Last_name").value;
+       var re_phone = document.getElementById("phone").value;
+       var re_email = document.getElementById("mail").value;
+       var re_address = document.getElementById("address").value;
+
+       var re_goal = document.getElementById("goal").value;
+
+      var edu_length = $('#edu_entry tbody tr').length;
+
+
+
+        document.getElementById("resume_name").innerHTML = re_firstName + " " + re_lastName;
+        document.getElementById("resume_phone").innerHTML = re_phone;
+        document.getElementById("resume_email").innerHTML = re_email;
+        document.getElementById("resume_address").innerHTML = re_address;
+        document.getElementById("resume_obj").innerHTML = re_goal;
+
+
+
+        toggleVisibility("section");
+        toggleVisibility("result");
+
+     }
+
+
+
+   </script>
+
+   <div id="section">
+     <nav>
+     Insert Information
+     </nav>
+
+      Last Name <input type="text" id="Last_name"><br>
+      First Name <input type="text" id="first_name"><br>
+      Email <input type="email" id="mail"><br>
+      Phone Number <input type="tel" id="phone"><br>
+      Adrress <input type="text" id="address"><br>
+      Career goal <input type="text" id="goal" size="40"><br>
+
+      <script type="text/javascript">
+
+        function LoadImg(value) {
+          if (value.files && value.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+              $('#resume_photo').attr('src', e.target.result);
+            }
+            reader.readAsDataURL(value.files[0]);
+          }
+        }
+      </script>
+
+      Image Load<input type="file" id="imgAttach" name="imgAttach" onchange="LoadImg(this);">
+      <br>
+
+      <button onclick="input()">submit</button>
+
+   </div>
+
+
+
+   <section id="result" style="width: 100%; border: 3px solid black; margin: 40px auto; visibility: hidden; height: 0px; width: 800px;">
+     <div style="text-align: center;">
+       <h3>RESUME</h3>
+       <hr>
+     </div>
+     <div id="forFontSize">
+       <div style="display:inline-block">
+         <div style="height: auto; width: 560px; float: left; margin: 5px 10px">
+           <img id="resume_photo" src="" alt="사진" width="100%"/>
+         </div>
+         <div style="float: left; width: 240px">
+           <strong><u><p id="resume_name" style="margin: 1px">이름</p></u></strong>
+           <span><STRONG>&nbsp;연락처 </STRONG></span><br>
+           <span>&nbsp;핸드폰 : </span><span id="resume_phone">핸드폰</span><br>
+           <span>&nbsp;E-mail : </span><span id="resume_email">이메일</span><br>
+           <span>&nbsp;주소 : </span><span id="resume_address">주소</span><br>
+         </div>
+       </div>
+       <hr>
+       <span>&nbsp; 목표</span><br>
+       <p id="resume_obj">목표</p>
+       <hr>
+       <span>&nbsp; 학력 </span>
+       <p id="resume_edu">학적</p>
+       <hr>
+       <span>&nbsp; 경력 </span>
+       <p id="resume_exp">경력</p>
+       <hr>
+       <span>&nbsp; 자격증 </span>
+       <p id="resume_ski">자격증</p>
+       <hr>
+     </div>
+   </section>
+
+</body>
+
+
+<!--<footer></footer>-->
+<div class='container'>
+<center>Copyright (c) <a href="https://blog.naver.com/ihanbin">BIN blog</a> All rights reserved.</center>
+</div>
+
+
+</html>
