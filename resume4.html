@@ -3,140 +3,14 @@
 <head><title="HB-Web"><meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link type="text/css" rel="stylesheet" href="styles.css">
-  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+   <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
    <script src="http://code.jquery.com/jquery-migrate-1.1.0.js"></script>
-  <h1>Resume Authoring</h1><br></br>
+  <h1>Resume Authoring!</h1><br></br>
 </head>
 
 <body>
 
-
-  <script type="text/javascript">
-
-    function toggleVisibility(id) {
-
-             var dom = document.getElementById(id);
-
-             if (dom.style.visibility != "hidden") {
-               dom.style.visibility = "hidden";
-               dom.style.height = "0px";
-
-             } else if (dom.style.visibility == "hidden") {
-               dom.style.visibility = "visible";
-               dom.style.height = "auto";
-             }
-           }
-
-     function input(){
-
-       var r_firstName = document.getElementById("First_name").value;
-       var r_lastName = document.getElementById("Last_name").value;
-       var r_phone = document.getElementById("phone").value;
-       var r_email = document.getElementById("mail").value;
-       var r_address = document.getElementById("address").value;
-
-       var r_goal = document.getElementById("goal").value;
-
-       var edu_length = $('#edu_entry tbody tr').length;
-       var exp_length = $('#exp_entry tbody tr').length;
-       var ski_length = $('#ski_entry tbody tr').length;
-
-       var r_f = document.getElementById("fonts").value;
-       var r_bg = document.getElementById("bgcolor").value;
-       var r_fc = document.getElementById("fcolor").value;
-       var r_fs = document.getElementById("pont").value;
-       r_fs += "em";
-
-
-       var r_education = "";
-
-       for (i = 1; i < edu_length + 1; i++) {
-         var id_school = "school" + i;
-         r_education += document.getElementById(id_school).value;
-         var id_major = "major" + i;
-         r_education += document.getElementById(id_major).value;
-         var id_addm = "addm" + i;
-         r_education += "  (" + document.getElementById(id_addm).value;
-         var id_grad = "grad" + i;
-         r_education += "~" + document.getElementById(id_grad).value;
-         var id_gpa = "gpa" + i;
-         r_education += ")  GPA: " + document.getElementById(id_gpa).value;
-         r_education += "<br>";
-       }
-
-       var r_experience = "";
-
-       for (i = 1; i < exp_length + 1; i++) {
-         var id_organization = "org" + i;
-         r_experience += document.getElementById(id_organization).value + " ";
-         var id_duty = "duty" + i;
-         r_experience += document.getElementById(id_duty).value;
-         var id_start = "start" + i;
-         r_experience += "  (" + document.getElementById(id_start).value;
-         var id_finish = "finish" + i;
-         r_experience += "~" + document.getElementById(id_finish).value + ")";
-         r_experience += "<br>";
-       }
-
-
-       var r_skill = "";
-
-       for (i = 1; i < ski_length + 1; i++) {
-         var id_field = "field" + i;
-         r_skill += document.getElementById(id_field).value;
-         var id_detail = "detail" + i;
-         r_skill += "  (" + document.getElementById(id_detail).value + ")";
-         r_skill += "<br>";
-       }
-
-        document.getElementById("show_name").innerHTML = r_firstName + " " + r_lastName;
-        document.getElementById("show_phone").innerHTML = r_phone;
-        document.getElementById("show_email").innerHTML = r_email;
-        document.getElementById("show_address").innerHTML = r_address;
-        document.getElementById("show_obj").innerHTML = r_goal;
-
-        document.getElementById("show_edu").innerHTML = r_education;
-        document.getElementById("show_exp").innerHTML = r_experience;
-        document.getElementById("show_ski").innerHTML = r_skill;
-
-        //스타일 변경내역
-        document.getElementById("result").style.font = r_f;
-        document.getElementById("result").style.backgroundColor = r_bg;
-        document.getElementById("result").style.color = r_fc;
-        document.getElementById("forFontSize").style.fontSize = r_fs;
-
-
-        //빈칸 확인구문
-        if(!r_lastName){
-          alert('Please fill in your Last Name.');
-        }else if(!r_firstName){
-          alert('Please fill in your first Name.');
-        }else if(Isphoto==0){
-            alert('Please fill in your Photo');
-        }else if(!r_phone){
-          alert('Please fill in your Phone Number.');
-        }else if(!r_email){
-            alert('Please fill in your email address.');
-        }else if(!r_address){
-          alert('Please fill in your address.');
-        }else if($('#edu_entry tbody tr').length==1){
-            alert('Please fill in your educations at least 1');
-        }else if($('#exp_entry tbody tr').length==1){
-            alert('Please fill in your Exerperiences at least 1');
-        }else if($('#ski_entry tbody tr').length==1){
-            alert('Please fill in your Skills at least 1');
-        }
-        else {//성공적인 입력 후 확인 구문
-          alert('Your resume has been created successfully!!!');
-          toggleVisibility("insert");
-          toggleVisibility("result");
-        }
-
-     }
-
-   </script>
-
-   <div id="insert">
+ <div id="insert">
      <nav>
      Insert Information
      </nav>
@@ -347,6 +221,127 @@
     </div>
   </div>
 
+  <script type="text/javascript">
+
+    function Visibility(id) {
+
+             var dom = document.getElementById(id);
+
+             if (dom.style.visibility != "hidden") {
+               dom.style.visibility = "hidden";
+               dom.style.height = "0px";
+
+             } else if (dom.style.visibility == "hidden") {
+               dom.style.visibility = "visible";
+             }
+           }
+
+     function input(){
+
+       var r_firstName = document.getElementById("First_name").value;
+       var r_lastName = document.getElementById("Last_name").value;
+       var r_phone = document.getElementById("phone").value;
+       var r_email = document.getElementById("mail").value;
+       var r_address = document.getElementById("address").value;
+       var r_goal = document.getElementById("goal").value;
+       var edu_length = $('#edu_entry tbody tr').length;
+       var exp_length = $('#exp_entry tbody tr').length;
+       var ski_length = $('#ski_entry tbody tr').length;
+       var r_f = document.getElementById("fonts").value;
+       var r_bg = document.getElementById("bgcolor").value;
+       var r_fc = document.getElementById("fcolor").value;
+       var r_fs = document.getElementById("pont").value;
+       r_fs += "em";
+
+
+       var r_education = "";
+
+       for (i = 1; i < edu_length + 1; i++) {
+         var id_school = "school" + i;
+         r_education += document.getElementById(id_school).value;
+         var id_major = "major" + i;
+         r_education += document.getElementById(id_major).value;
+         var id_addm = "addm" + i;
+         r_education += "  (" + document.getElementById(id_addm).value;
+         var id_grad = "grad" + i;
+         r_education += "~" + document.getElementById(id_grad).value;
+         var id_gpa = "gpa" + i;
+         r_education += ")  GPA: " + document.getElementById(id_gpa).value;
+         r_education += "<br>";
+       }
+
+       var r_experience = "";
+
+       for (i = 1; i < exp_length + 1; i++) {
+         var id_organization = "org" + i;
+         r_experience += document.getElementById(id_organization).value + " ";
+         var id_duty = "duty" + i;
+         r_experience += document.getElementById(id_duty).value;
+         var id_start = "start" + i;
+         r_experience += "  (" + document.getElementById(id_start).value;
+         var id_finish = "finish" + i;
+         r_experience += "~" + document.getElementById(id_finish).value + ")";
+         r_experience += "<br>";
+       }
+
+
+       var r_skill = "";
+
+       for (i = 1; i < ski_length + 1; i++) {
+         var id_field = "field" + i;
+         r_skill += document.getElementById(id_field).value;
+         var id_detail = "detail" + i;
+         r_skill += "  (" + document.getElementById(id_detail).value + ")";
+         r_skill += "<br>";
+       }
+
+        document.getElementById("show_name").innerHTML = r_firstName + r_lastName;
+        document.getElementById("show_phone").innerHTML = r_phone;
+        document.getElementById("show_email").innerHTML = r_email;
+        document.getElementById("show_address").innerHTML = r_address;
+        document.getElementById("show_obj").innerHTML = r_goal;
+        document.getElementById("show_edu").innerHTML = r_education;
+        document.getElementById("show_exp").innerHTML = r_experience;
+        document.getElementById("show_ski").innerHTML = r_skill;
+
+        //스타일 변경내역
+        document.getElementById("result").style.font = r_f;
+        document.getElementById("result").style.backgroundColor = r_bg;
+        document.getElementById("result").style.color = r_fc;
+        document.getElementById("forFontSize").style.fontSize = r_fs;
+
+
+        //빈칸 확인구문
+        if(!r_lastName){
+          alert('Please fill in your Last Name.');
+        }else if(!r_firstName){
+          alert('Please fill in your first Name.');
+        }else if(Isphoto==0){
+            alert('Please fill in your Photo');
+        }else if(!r_phone){
+          alert('Please fill in your Phone Number.');
+        }else if(!r_email){
+            alert('Please fill in your email address.');
+        }else if(!r_address){
+          alert('Please fill in your address.');
+        }else if($('#edu_entry tbody tr').length==1){
+            alert('Please fill in your educations at least 1');
+        }else if($('#exp_entry tbody tr').length==1){
+            alert('Please fill in your Exerperiences at least 1');
+        }else if($('#ski_entry tbody tr').length==1){
+            alert('Please fill in your Skills at least 1');
+        }
+        else {//성공적인 입력 후 확인 구문
+          alert('Your resume has been created successfully!!!');
+          Visibility("insert");
+          Visibility("result");
+        }
+
+     }
+
+   </script>
+
+  
 
 
    <section id="result" style="width: 100%; border: 2px solid black; margin: 40px auto; visibility: hidden; height: 0px; width: 800px;">
