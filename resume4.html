@@ -1,4 +1,5 @@
 
+
 <html>
 
 <head><title="HB-Web"><meta charset="utf-8">
@@ -14,8 +15,8 @@
 
   function insertButton(){
 
-    document.getElementById("show_name").innerHTML  = document.getElementById("Last_name").value + document.getElementById("First_name").value;
 
+    document.getElementById("show_name").innerHTML  = document.getElementById("Last_name").value + document.getElementById("First_name").value;
     document.getElementById("show_phone").innerHTML = document.getElementById("phone").value;
     document.getElementById("show_email").innerHTML = document.getElementById("mail").value;
     document.getElementById("show_address").innerHTML = document.getElementById("address").value;
@@ -25,6 +26,7 @@
     document.getElementById("show_ski").innerHTML = document.getElementById("skill").value;
 
 
+    //Error Detect
 
     if(!document.getElementById("Last_name").value){
       alert('Please fill in your Last Name.');
@@ -36,6 +38,8 @@
         alert('Please fill in your email address.');
     }else if(!document.getElementById("address").value){
       alert('Please fill in your address.');
+    }else if(!document.getElementById("goal").value){
+        alert('Please fill in your goal.');
     }else if(!document.getElementById("edu").value){
       alert('Please fill in your education.');
     }else if(!document.getElementById("exp").value){
@@ -44,6 +48,7 @@
       alert('Please fill in your skill.');}
     else {//성공적인 입력 후 확인 구문
       alert('Your resume has been created successfully!!!');
+
       document.getElementById("insert").style.visibility = "hidden";
       document.getElementById("insert").style.height="0px";
       document.getElementById("resumeScreen").style.visibility = "visible";
@@ -63,8 +68,8 @@
         <div class="bb3"> Adrress <input type="text" id="address" size=50><br></div>
         <div class="bb3"> Career goal <input type="text" id="goal" size="50" placeholder="one sentence"><br></div>
         <div class="bb3"> Education  <input type="text" id="edu"  placeholder="school"><br></div>
-        <div class="bb3"> Experience  <input type="text" id="exp"  placeholder=""><br></div>
-        <div class="bb3"> Skills  <input type="text" id="skill"  placeholder="skill"><br>
+        <div class="bb3"> Experience  <input type="text" id="exp"  placeholder="experience"><br></div>
+        <div class="bb3"> Skills  <input type="text" id="skill"  placeholder="skills"><br>
       </div>
 
       <div class="center">
@@ -76,29 +81,28 @@
   </div>
 
    <div id="resumeScreen"style="width: 100%; visibility:hidden; height: 0px; width: 800px;">
-       <h3>RESUME</h3>
-       <hr>
-         <center> <div style="margin-bottom: 10px;background-color: white; height: auto; width: 300px;">
-         </div></center> <hr style="border: 2px;">
-           &nbsp;  Name :<STRONG> &nbsp; &nbsp; &nbsp;<div id="show_name" style=" margin: 10px;">Name</div></STRONG><hr>
-           <div>&nbsp; Contact Infromation </div><br>
-           <div>&nbsp;Phone Number : <STRONG><span id="show_phone">Phone Number</span></STRONG></div><br>
-           <div>&nbsp;E-mail : <STRONG> <span id="show_email">E-mail</span></STRONG></div><br>
-           <div>&nbsp;Address : <STRONG> <span id="show_address">Address</span></STRONG></div><br>
 
+       <center><div class="bb2">RESUME</div></center>
        <hr>
-       <span>&nbsp; Goal</span><br>
-       &nbsp;<div><STRONG><span id="show_goal">Goal</span></STRONG></div>
-       <hr>
-       <span>&nbsp; Education </span>
-       &nbsp;<div><p id="show_edu">Education</p></div>
-       <hr>
-       <span>&nbsp; Experience </span>
-       &nbsp;<div><p id="show_exp">Experience</p></div>
-       <hr>
-       <span>&nbsp; Skills</span>
-       &nbsp;<div><p id="show_ski">Skills</p><div>
-       <hr>
+         <center> <div style="margin-bottom: 10px ;background-color: white; height: auto; width: 300px;">
+         </div></center> <hr style="border: 2px;">
+            <div class="bb3">Name : </div><div id="show_name" style=" margin: 10px;">Name</div><hr>
+           <div class="bb3">Phone Number : <div id="show_phone">Phone Number</div><hr>
+           <div class="bb3">E-mail : <div id="show_email">E-mail</div><hr>
+           <div class="bb3">Address :  <div id="show_address">Address</div><hr>
+         <div class="bb3">Goal<br>
+         <div><div id="show_goal">Goal</div>
+         <hr>
+         <div class="bb3">Education<br>
+         <div><div id="show_edu">Education</div>
+         <hr>
+         <div class="bb3">Experience<br>
+         <div><div id="show_exp">Experience</div>
+         <hr>
+         <div class="bb3">Skill<br>
+         <div><div id="show_ski">Skill</div>
+         <hr>
+     </div>
      </div>
 
      <script language="javascript">
@@ -107,8 +111,8 @@
       }
       </script>
 
-     <h3><center><input type='button' style=" padding: 5px; font-size:1em; " onclick='remake()' value='Recreate'/>
-     </center></h3>
+     <h4><center><input type='button' style=" padding: 5px; font-size:0.7em; " onclick='remake()' value='Recreate'/>
+     </center></h4>
 
 
 
