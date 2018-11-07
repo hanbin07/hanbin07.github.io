@@ -19,19 +19,19 @@
         <div class="bb3"> First Name <input type="text" id="First_name"></div>
       <script type="text/javascript">
        var Isphoto=0;
-        function LoadImg(value) {//이미지 로드 함수
-          if (value.files && value.files[0]) {
+        function Img(photo) {//이미지 로드 함수
+          if (photo.files && photo.files[0]) {
             var reader = new FileReader();
             reader.onload = function(e) {
               $('#show_photo').attr('src', e.target.result);
               Isphoto=1;
             }
-            reader.readAsDataURL(value.files[0]);
+            reader.readAsDataURL(photo.files[0]);
           }
         }
       </script>
 
-        <div class="bb3"> Image Load <input type="file" id="imgAttach" name="imgAttach" onchange="LoadImg(this);"><br>  </div>
+        <div class="bb3"> Image Load <input type="file" id="imgAttach" name="imgAttach" onchange="Img(this);"><br>  </div>
         <div class="bb3"> Phone Number <input type="tel" id="phone" placeholder="***-****-****"><br></div>
         <div class="bb3"> Email <input type="email" id="mail" placeholder="you@example.com"><br></div>
         <div class="bb3"> Adrress <input type="text" id="address" size=50><br></div>
