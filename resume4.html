@@ -106,8 +106,8 @@
         </thead>
         <tbody>
           <tr>
-            <td><input type="text" id="org1" size="20" /></td>
-            <td><input type="text" id="duty1" size="20" /></td>
+            <td><input type="text" id="org1" /></td>
+            <td><input type="text" id="duty1"/></td>
             <td><input type="date" id="start1" />~<input type="date" id="finish1" /></td>
           </tr>
         </tbody>
@@ -121,20 +121,20 @@
         function button2_click() {
           var ex_entryNum = $('#exp_entry tbody tr').length;
           ex_entryNum++;
-          var rowItem = "<tr>";
-          rowItem += "<td><input type=\"text\" id=\"org";
-          rowItem += ex_entryNum;
-          rowItem += "\" size=\"30\"/></td>";
-          rowItem += "<td><input type=\"text\" id=\"duty";
-          rowItem += ex_entryNum;
-          rowItem += "\" size=\"30\"/></td>";
-          rowItem += "<td><input type=\"date\" id=\"start";
-          rowItem += ex_entryNum;
-          rowItem += "\"/>~<input type=\"date\" id=\"finish";
-          rowItem += ex_entryNum;
-          rowItem += "\"/></td>";
-          rowItem += "</tr>";
-          $('#exp_entry').append(rowItem);
+          var row = "<tr>";
+          row += "<td><input type=\"text\" id=\"org";
+          row += ex_entryNum;
+          row += "/></td>";
+          row += "<td><input type=\"text\" id=\"duty";
+          row += ex_entryNum;
+          row +=  "/></td>";
+          row += "<td><input type=\"date\" id=\"start";
+          row += ex_entryNum;
+          row += "\"/>~<input type=\"date\" id=\"finish";
+          row += ex_entryNum;
+          row += "\"/></td>";
+          row += "</tr>";
+          $('#exp_entry').append(row);
         }
 
         function button5_click() {
