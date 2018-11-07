@@ -4,238 +4,27 @@
 <head><title="HB-Web"><meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link type="text/css" rel="stylesheet" href="styles.css">
-   <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <a class='pull-left title' href="index.html"><center><img src="images/image1.jpg" width="50%"></center></a>
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
    <script src="http://code.jquery.com/jquery-migrate-1.1.0.js"></script>
-  <h1>Resume Authoring!</h1><br></br>
+  <h1>Resume Authoring</h1><br></br>
 </head>
 
 <body>
 
- <div id="insert">
-     <nav>
-     Insert Information
-     </nav>
-     <div class="bb1">
-     <div class="bb3">  Last Name <input type="text" id="Last_name" ><br></div>
-        <div class="bb3"> First Name <input type="text" id="First_name"></div>
-      <script type="text/javascript">
-       var Isphoto=0;
-        function LoadImg(value) {//이미지 로드 함수
-          if (value.files && value.files[0]) {
-            var reader = new FileReader();
-            reader.onload = function(e) {
-              $('#show_photo').attr('src', e.target.result);
-              Isphoto=1;
-            }
-            reader.readAsDataURL(value.files[0]);
-          }
-        }
-      </script>
-
-        <div class="bb3"> Image Load <input type="file" id="imgAttach" name="imgAttach" onchange="LoadImg(this);"><br>  </div>
-        <div class="bb3"> Phone Number <input type="tel" id="phone" placeholder="***-****-****"><br></div>
-        <div class="bb3"> Email <input type="email" id="mail" placeholder="you@example.com"><br></div>
-        <div class="bb3"> Adrress <input type="text" id="address" size=50><br></div>
-        <div class="bb3"> Career goal <input type="text" id="goal" size="50"placeholder="one sentence"><br></div>
-
-        <div class="bb3"> Education</div>
-      <div class="bb2">
-      <table id="edu_entry">
-        <thead>
-          <td>School Name</td>
-          <td>Major</td>
-          <td>Entrance</td>
-          <td>Graduation</td>
-          <td>Grade</td>
-        </thead>
-        <tbody>
-          <tr>
-            <td><input type="text" id="school1" size="20" value="" /></td>
-            <td><input type="text" id="major1" size="20" value="" /></td>
-            <td><input type="date" id="addm1" value="" /></td>
-            <td><input type="date" id="grad1" value="" /></td>
-            <td><input type="text" id="gpa1" size="20" value="" /></td>
-          </tr>
-        </tbody>
-      </table>
-
-      <input type="button" id="edu_add" onclick="button1_click();" value="More" />
-      <input type="button" id="edu_rem" onclick="button4_click();" value="Delete" />
-    </div>
-
-      <script>
-
-        function button1_click() {
-          var entryNum = $('#edu_entry tbody tr').length;
-          entryNum++;
-          var rowItem = "<tr>";
-          rowItem += "<td><input type=\"text\" id=\"school";
-          rowItem += entryNum;
-          rowItem += "\" size=\"30\"/></td>";
-          rowItem += "<td><input type=\"text\" id=\"major";
-          rowItem += entryNum;
-          rowItem += "\" size=\"30\"/></td>";
-          rowItem += "<td><input type=\"date\" id=\"addm";
-          rowItem += entryNum;
-          rowItem += "\"/></td>";
-          rowItem += "<td><input type=\"date\" id=\"grad";
-          rowItem += entryNum;
-          rowItem += "\"/></td>";
-          rowItem += "<td><input type=\"text\" id=\"gpa";
-          rowItem += entryNum;
-          rowItem += "\" size=\"30\"/></td>";
-          rowItem += "</tr>";
-          $('#edu_entry').append(rowItem);
-        }
-
-        function button4_click() {
-          if ($('#edu_entry tbody tr').length > 1) {
-            $('#edu_entry tr:last').remove();
-          } else {
-            alert('It is all erased.;');
-          }
-        }
-      </script><br>
-
-      Experience
-      <div class="bb2">
-      <table id="exp_entry">
-        <thead>
-          <td>Organization</td>
-          <td>Duty</td>
-          <td>Duration</td>
-        </thead>
-        <tbody>
-          <tr>
-            <td><input type="text" id="org1" size="20" /></td>
-            <td><input type="text" id="duty1" size="20" /></td>
-            <td><input type="date" id="start1" />~<input type="date" id="finish1" /></td>
-          </tr>
-        </tbody>
-      </table>
-
-      <input type="button" id="exp_add" onclick="button2_click();" value="More" />
-      <input type="button" id="exp_rem" onclick="button5_click();" value="Delete" />
-   </div>
-      <script>
-
-        function button2_click() {
-          var ex_entryNum = $('#exp_entry tbody tr').length;
-          ex_entryNum++;
-          var rowItem = "<tr>";
-          rowItem += "<td><input type=\"text\" id=\"org";
-          rowItem += ex_entryNum;
-          rowItem += "\" size=\"30\"/></td>";
-          rowItem += "<td><input type=\"text\" id=\"duty";
-          rowItem += ex_entryNum;
-          rowItem += "\" size=\"30\"/></td>";
-          rowItem += "<td><input type=\"date\" id=\"start";
-          rowItem += ex_entryNum;
-          rowItem += "\"/>~<input type=\"date\" id=\"finish";
-          rowItem += ex_entryNum;
-          rowItem += "\"/></td>";
-          rowItem += "</tr>";
-          $('#exp_entry').append(rowItem);
-        }
-
-        function button5_click() {
-          if ($('#exp_entry tbody tr').length > 1) {
-            $('#exp_entry tr:last').remove();
-          } else {
-            alert('It is all erased.;');
-          }
-        }
-      </script><br>
-
-      Skills
-      <div class="bb2">
-      <table id="ski_entry">
-        <thead>
-          <td>Filed</td>
-          <td>Detail</td>
-        </thead>
-        <tbody>
-          <tr>
-            <td><input type="text" id="field1" size="30" /></td>
-            <td><input type="text" id="detail1" size="60" /></td>
-          </tr>
-        </tbody>
-      </table>
-
-      <input type="button" id="skill_add" onclick="button3_click();" value="More" />
-      <input type="button" id="skill_rem" onclick="button6_click();" value="Delete" />
-        </div>
-      <script>
-        function button3_click() {
-          var sk_entryNum = $('#ski_entry tbody tr').length;
-          sk_entryNum++;
-          var rowItem = "<tr>";
-          rowItem += "<td><input type=\"text\" id=\"field";
-          rowItem += sk_entryNum;
-          rowItem += "\" size=\"30\"/></td>";
-          rowItem += "<td><input type=\"text\" id=\"detail";
-          rowItem += sk_entryNum;
-          rowItem += "\" size=\"60\"/></td>";
-          rowItem += "</tr>";
-          $('#ski_entry').append(rowItem);
-        }
-
-        function button6_click() {
-          if ($('#ski_entry tbody tr').length > 1) {
-            $('#ski_entry tr:last').remove();
-          } else {
-            alert('It is all erased.;');
-          }
-        }
-      </script>
-      <br><!--스타일 설정하는 부분-->
-      Format/style Options
-      <div class="bb2">
-      <table>
-        <tr>
-          <td>Background Color</td>
-          <td><input type="color" id="bgcolor" value="#ffffff" /></td>
-        </tr>
-        <tr>
-          <td>Font</td>
-          <td><select id="fonts" name="fonts"><option value= "Times New Roman">Defualt</option><option value="Times New Roman">Times New Roman</option><option value="monospace">monospace</option></td>
-        </tr>
-        <tr>
-          <td>Letter Color</td>
-          <td><input type="color" id="fcolor" /></td>
-        </tr>
-        <tr>
-          <td>Letter Size</td>
-          <td>Small<input type="range" id="pont" min="0" max="3" value="1" step="0.1" />Big
-          </td>
-        </tr>
-      </table>
-    </div>
-      <div class="center">
-      <p style= "text-align:center;">
-
-      <input type="reset" value="Reset" style="font-size:1em; background:Pink; padding: 5px;">
-      <button onclick="input()" style="font-size:1em; background:Skyblue; padding: 5px;" >submit</button>
-     </p>
-
-      </div>
-    </div>
-  </div>
 
   <script type="text/javascript">
 
-    function Visibility(id) {
 
-             var dom = document.getElementById(id);
+  function Visibility(id) {
 
-             if (dom.style.visibility != "hidden") {
-               dom.style.visibility = "hidden";
-               dom.style.height = "0px";
-
-             } else if (dom.style.visibility == "hidden") {
-               dom.style.visibility = "visible";
-             }
-           }
+           var dom = document.getElementById(id);
+           if (dom.style.visibility != "hidden") {
+             dom.style.visibility = "hidden";
+             dom.style.height = "0px";
+           } else if (dom.style.visibility == "hidden") {
+             dom.style.visibility = "visible";
+         }
 
      function input(){
 
@@ -244,10 +33,13 @@
        var r_phone = document.getElementById("phone").value;
        var r_email = document.getElementById("mail").value;
        var r_address = document.getElementById("address").value;
+
        var r_goal = document.getElementById("goal").value;
+
        var edu_length = $('#edu_entry tbody tr').length;
        var exp_length = $('#exp_entry tbody tr').length;
        var ski_length = $('#ski_entry tbody tr').length;
+
        var r_f = document.getElementById("fonts").value;
        var r_bg = document.getElementById("bgcolor").value;
        var r_fc = document.getElementById("fcolor").value;
@@ -296,11 +88,12 @@
          r_skill += "<br>";
        }
 
-        document.getElementById("show_name").innerHTML = r_firstName + r_lastName;
+        document.getElementById("show_name").innerHTML = r_firstName + " " + r_lastName;
         document.getElementById("show_phone").innerHTML = r_phone;
         document.getElementById("show_email").innerHTML = r_email;
         document.getElementById("show_address").innerHTML = r_address;
         document.getElementById("show_obj").innerHTML = r_goal;
+
         document.getElementById("show_edu").innerHTML = r_education;
         document.getElementById("show_exp").innerHTML = r_experience;
         document.getElementById("show_ski").innerHTML = r_skill;
@@ -334,15 +127,226 @@
         }
         else {//성공적인 입력 후 확인 구문
           alert('Your resume has been created successfully!!!');
-          Visibility("insert");
-          Visibility("result");
+         Visibility("insert");
+        Visibility("result");
         }
 
      }
 
    </script>
 
-  
+   <div id="insert">
+     <nav>
+     Insert Information
+     </nav>
+     <div class="bb1">
+     <div class="bb3">  Last Name <input type="text" id="Last_name" ><br></div>
+        <div class="bb3"> First Name <input type="text" id="First_name"></div>
+      <script type="text/javascript">
+       var Isphoto=0;
+
+        function LoadImg(value) {//이미지 로드 함수
+          if (value.files && value.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+              $('#show_photo').attr('src', e.target.result);
+              Isphoto=1;
+            }
+            reader.readAsDataURL(value.files[0]);
+          }
+        }
+      </script>
+
+        <div class="bb3"> Image Load <input type="file" id="imgAttach" name="imgAttach" onchange="LoadImg(this);"><br>  </div>
+        <div class="bb3"> Phone Number <input type="tel" id="phone" placeholder="***-****-****"><br></div>
+        <div class="bb3"> Email <input type="email" id="mail" placeholder="you@example.com"><br></div>
+        <div class="bb3"> Adrress <input type="text" id="address" size=50><br></div>
+        <div class="bb3"> Career goal <input type="text" id="goal" size="50"placeholder="one sentence"><br></div>
+
+        <div class="bb3"> Education</div>
+      <div class="bb2">
+      <table id="edu_entry">
+        <thead>
+          <td>School Name</td>
+          <td>Major</td>
+          <td>Entrance</td>
+          <td>Graduation</td>
+          <td>Grade</td>
+        </thead>
+        <tbody>
+          <tr>
+            <td><input type="text" id="school1" value="" /></td>
+            <td><input type="text" id="major1" value="" /></td>
+            <td><input type="date" id="addm1" value="" /></td>
+            <td><input type="date" id="grad1" value="" /></td>
+            <td><input type="text" id="gpa1" value="" /></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <input type="button" id="edu_add" onclick="ADD1();" value="More" />
+      <input type="button" id="edu_rem" onclick="ADD2();" value="Delete" />
+    </div>
+
+      <script>
+
+        function ADD1() {
+          var entryNum = $('#edu_entry tbody tr').length;
+          entryNum++;
+          var rowItem = "<tr>";
+          rowItem += "<td><input type=\"text\" id=\"school";
+          rowItem += entryNum;
+          rowItem +=  "\"/></td>";
+          rowItem += "<td><input type=\"text\" id=\"major";
+          rowItem += entryNum;
+          rowItem += "\"/></td>";
+          rowItem += "<td><input type=\"date\" id=\"addm";
+          rowItem += entryNum;
+          rowItem += "\"/></td>";
+          rowItem += "<td><input type=\"date\" id=\"grad";
+          rowItem += entryNum;
+          rowItem += "\"/></td>";
+          rowItem += "<td><input type=\"text\" id=\"gpa";
+          rowItem += entryNum;
+          rowItem +=  "\"/></td>";
+          rowItem += "</tr>";
+          $('#edu_entry').append(rowItem);
+        }
+
+        function ADD2() {
+          if ($('#edu_entry tbody tr').length > 1) {
+            $('#edu_entry tr:last').remove();
+          } else {
+            alert('It is all erased.;');
+          }
+        }
+      </script><br>
+
+      Experience
+      <div class="bb2">
+      <table id="exp_entry">
+        <thead>
+          <td>Organization</td>
+          <td>Duty</td>
+          <td>Duration</td>
+        </thead>
+        <tbody>
+          <tr>
+            <td><input type="text" id="org1" size="20" /></td>
+            <td><input type="text" id="duty1" size="20" /></td>
+            <td><input type="date" id="start1" />~<input type="date" id="finish1" /></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <input type="button" id="exp_add" onclick="ADD3();" value="More" />
+      <input type="button" id="exp_rem" onclick="ADD4();" value="Delete" />
+   </div>
+      <script>
+
+        function ADD3() {
+          var ex_entryNum = $('#exp_entry tbody tr').length;
+          ex_entryNum++;
+          var rowItem = "<tr>";
+          rowItem += "<td><input type=\"text\" id=\"org";
+          rowItem += ex_entryNum;
+          rowItem += "\"/></td>";
+          rowItem += "<td><input type=\"text\" id=\"duty";
+          rowItem += ex_entryNum;
+          rowItem +=  "\"/></td>";
+          rowItem += "<td><input type=\"date\" id=\"start";
+          rowItem += ex_entryNum;
+          rowItem += "\"/>~<input type=\"date\" id=\"finish";
+          rowItem += ex_entryNum;
+          rowItem += "\"/></td>";
+          rowItem += "</tr>";
+          $('#exp_entry').append(rowItem);
+        }
+
+        function ADD4() {
+          if ($('#exp_entry tbody tr').length > 1) {
+            $('#exp_entry tr:last').remove();
+          } else {
+            alert('It is all erased.;');
+          }
+        }
+      </script><br>
+
+      Skills
+      <div class="bb2">
+      <table id="ski_entry">
+        <thead>
+          <td>Filed</td>
+          <td>Detail</td>
+        </thead>
+        <tbody>
+          <tr>
+            <td><input type="text" id="field1" size="30" /></td>
+            <td><input type="text" id="detail1" size="60" /></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <input type="button" id="skill_add" onclick="ADD5();" value="More" />
+      <input type="button" id="skill_rem" onclick="ADD6();" value="Delete" />
+        </div>
+      <script>
+        function ADD5() {
+          var sk_entryNum = $('#ski_entry tbody tr').length;
+          sk_entryNum++;
+          var rowItem = "<tr>";
+          rowItem += "<td><input type=\"text\" id=\"field";
+          rowItem += sk_entryNum;
+          rowItem +=  "\"/></td>";
+          rowItem += "<td><input type=\"text\" id=\"detail";
+          rowItem += sk_entryNum;
+          rowItem +=  "\"/></td>";
+          rowItem += "</tr>";
+          $('#ski_entry').append(rowItem);
+        }
+
+        function ADD6() {
+          if ($('#ski_entry tbody tr').length > 1) {
+            $('#ski_entry tr:last').remove();
+          } else {
+            alert('It is all erased.;');
+          }
+        }
+      </script>
+      <br><!--스타일 설정하는 부분-->
+      Format/style Options
+      <div class="bb2">
+      <table>
+        <tr>
+          <td>Background Color</td>
+          <td><input type="color" id="bgcolor" value="#ffffff" /></td>
+        </tr>
+        <tr>
+          <td>Font</td>
+          <td><select id="fonts" name="fonts"><option value= "Times New Roman">Defualt</option><option value="Times New Roman">Times New Roman</option><option value="monospace">monospace</option></td>
+        </tr>
+        <tr>
+          <td>Letter Color</td>
+          <td><input type="color" id="fcolor" /></td>
+        </tr>
+        <tr>
+          <td>Letter Size</td>
+          <td>Small<input type="range" id="pont" min="0" max="3" value="1" step="0.1" />Big
+          </td>
+        </tr>
+      </table>
+    </div>
+      <div class="center">
+      <p style= "text-align:center;">
+
+      <input type="reset" value="Reset" style="font-size:1em; background:Pink; padding: 5px;">
+      <button onclick="input()" style="font-size:1em; background:Skyblue; padding: 5px;" >submit</button>
+     </p>
+
+      </div>
+    </div>
+  </div>
+
 
 
    <section id="result" style="width: 100%; border: 2px solid black; margin: 40px auto; visibility: hidden; height: 0px; width: 800px;">
