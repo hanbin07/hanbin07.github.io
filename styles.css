@@ -32,12 +32,26 @@ nav{
 
 }
 .bb2{
+  font-family: "Comic Sans MS",Times , serif;
+  font-size: 1.5em;
+  padding-top: 10px;
+  padding-left: 50px;
+}
+.bb4{
+  font-family: "Comic Sans MS",Times , serif;
+  font-size: 2.0em;
   padding-top: 10px;
   padding-left: 50px;
 }
 
 .bb3{
     font-family: "Comic Sans MS",Times , serif;
+    font-size: 1.0em;
+    padding-top: 20px;
+}
+.bb5{
+    font-family: "Comic Sans MS",Times , serif;
+    font-size: 1.5em;
     padding-top: 20px;
 }
 
