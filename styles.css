@@ -36,6 +36,11 @@ nav{
   padding-left: 50px;
 }
 
+.bb3{
+    font-family: "Comic Sans MS",Times , serif;
+    padding-top: 20px;
+}
+
 .container {
     width: 1000px;
     margin: 0 auto; /* to align a contents to center margin: top, right, bottom, left*/
