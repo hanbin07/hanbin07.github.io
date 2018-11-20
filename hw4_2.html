@@ -129,7 +129,7 @@
   }
   data.prototype.draw=function(){
     context.fillRect(this.x,this.y,this.w,this.h);
-      if(this.type=="rec"){
+      if(this.type==="rec"){
         //사각형
       context.fillStyle='#878bff';
       context.fillRect(this.x,this.y,this.w,this.h);
@@ -137,7 +137,7 @@
       context.strokeRect(this.x,this.y,this.w,this.h);
 
       }
-      else if(this.type=="line"){
+      else if(this.type==="line"){
         //line
         context.beginPath();
         context.moveTo(this.x,this.y);
@@ -146,7 +146,7 @@
         context.strokeStyle='#f6ff76';
         context.stroke();
       }
-      else if(this.type=="tri"){
+      else if(this.type==="tri"){
         //삼각형
 
         context.beginPath();
@@ -163,12 +163,11 @@
         context.moveTo(this.x,this.y);
         context.lineTo(this.w,this.h);
 
-      }else if(this.type=="point"){
+      }else if(this.type==="point"){
         context.fillStyle='#22d42b';
         context.moveTo(this.x,this.y);
-        context.lineTo(this.w,this.h);
 
-      }else if(this.type=="circle"){
+      }else if(this.type==="circle"){
         context.beginPath();
         context.arc(this.x,this.y,this.w,0,2.0*Math.PI,false);
         context.closePath();
@@ -182,35 +181,45 @@
   function drawTreeDFS(tree,id){
     //root부터 시작해서
     //CIDNUM인 애부터 시작
-    document.write(tree.nodeNum);//3개
+    var drawtime=0;
+
     for(var i=0; i < tree.nodeNum ;i++){
-      document.write("찾자12");
+
       if(tree.nodeArray[i].ID === id){
         //현재 아이디에 해당하는 애를 찾기
         //check가 되어있는가?
-        document.write("찾자2");
+
         if(tree.nodeArray[i].check===false){//체크가 아직 안되었으면
+          document.write("그리는 것의 아이디");
+          document.write(tree.nodeArray[i].ID);
+          document.write("<br>");
           tree.nodeArray[i].data.draw();//그리고
           tree.nodeArray[i].check = true;//그렸다고 표시하고
+          drawtime++;
           if(tree.nodeArray[i].cIDNum===0){//자녀가 없는 애면
+            document.write("자녀없어서 올라감");
+            document.write("<br>");
             drawTreeDFS(tree , tree.nodeArray[i].pID);//위로 올라가기
           }
           else {
+            document.write("첫자식으로");
+            document.write("<br>");
             drawTreeDFS(tree,tree.nodeArray[i].cID[0]);//아래로 내려가기
           }
         }//체크가 아직 안되었으면
-        else{//이미 그려진상태, 다시 올라온 상황
+        else{//체크된 것 이미 그려진상태, 다시 올라온 상황
           //맨위면
-          if(tree.nodeArray[i].pID===null){//끝내기
-            break;
+          if(tree.nodeArray[i].pID===null&&drawtime===tree.nodeNum){//끝내기
+            document.write("drawtime");
+            document.write(drawtime);
+            document.write("<br>");
           }
           else{
             for(var k=0 ; k<tree.nodeArray[i].cIDNum;k++){//안그린애 찾기
-              //this.nodeArray[i].cID[k]이 아이디에 해당하는 애의 check
               for(var m=0; m < tree.nodeNum ;m++){
                 if(tree.nodeArray[i].cID[k]===tree.nodeArray[m].ID){//특정 cid를 찾음
                   if(tree.nodeArray[m].check===false){//아직 안그려졌으면
-                    drawTreeDFS(tree,tree.this.nodeArray[m].ID);//걔로
+                    drawTreeDFS(tree,tree.nodeArray[m].ID);//걔로
                   }
                 }
               }
@@ -220,34 +229,35 @@
           }
         }
       }
-      document.write("찾자3");
+
     }
   }
+
+
+  //tree 생성
   //root
   var element0 = new data(100,100,1000,800,"rec");
-  // Draw 파트
+  element0.draw();
   var tree = new Tree(new Node(12, element0,null, null));
-  /*
-  tree.add(new Node(23,0,12,null));
-  tree.add(new Node(46,1,12,null));
-  tree.add(new Node(10,1,23,null));
-  tree.add(new Node(5,1,10,null));
-  tree.add(new Node(15,1,23,null));
-  tree.add(new Node(7,1,46,null));
-  */
-
-  //트리생성
-  var element = new data(300,300,500,500,"rec");
+  //노드추가
+  var element = new data(200,300,500,500,"rec");
+  element.draw();
   tree.add(new Node(23,element,12,null));
-  var element1 = new data(350,350,300,250,"tri");
+  var element1 = new data(250,350,200,150,"tri");
+  element1.draw();
   tree.add(new Node(33,element1,23,null));
-  var element2 = new data(500,350,100,250,"rec");
+  var element2 = new data(550,350,50,250,"rec");
+  element2.draw();
   tree.add(new Node(5,element2,23,null));
-
+  var element3 = new data(500,550,100,150,"tri");
+ // tree.add(new Node(17,element3,5,null));
+  //var element4 = new data(500,350,100,250,"rec");
+  //tree.add(new Node(18,element4,23,null));
+ //확인용 코드
   tree.printNode();
 
   //draw 실행
-  drawTreeDFS(tree,12);
+  //drawTreeDFS(tree,12);
 
 
 </script>
