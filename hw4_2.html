@@ -22,7 +22,7 @@
 <body>
 <canvas id="canvas" width = "1500" height = "1000"></canvas>
 
-이것은 과제 4
+
 
 <script>
   var canvas = document.getElementById("canvas");
@@ -35,6 +35,7 @@
     this.pID=pID;
     this.cID=[];//arbitary
     this.cID[0]=cID;
+    this.check=false;
     if(cID == null){//없으면
       this.cIDNum=0;
     }else{
@@ -73,11 +74,6 @@
     this.nodeNum ++ ;
   }
  Tree.prototype.delete = function(deleteID) {
-   //cid 없애주기
-   //말단제거
-   //중간제거-> 얘는 다 지워야할듯
-   document.write("지웠다1");
-   document.write("<br>");
    var pidinfo= 0;
    for(var i=0; i < this.nodeNum ;i++){
      if(this.nodeArray[i].ID === deleteID){//부모인거
@@ -98,7 +94,9 @@
       }
     }
   }
+
   Tree.prototype.printNode = function() {
+    //모든 노드정보 출력함수
     var num = this.nodeNum;
     document.write("<br>");
     for(var i=0; i < num ;i++){
@@ -122,23 +120,113 @@
   }
 
 
-  data = function(x, y, w, h){
+  data = function(x, y, w, h ,type){
     this.x = x;//->이것은 상위노드에 비해 상대적인 수치입니다.
     this.y = y;
     this.w = w;
     this.h = h;
+    this.type=type;
   }
   data.prototype.draw=function(){
-    context.strokeRect(this.x,this.y,this.w,this.h);
+    context.fillRect(this.x,this.y,this.w,this.h);
+      if(this.type=="rec"){
+        //사각형
+      context.fillStyle='#878bff';
+      context.fillRect(this.x,this.y,this.w,this.h);
+      context.strokeStyle='#0f0206';
+      context.strokeRect(this.x,this.y,this.w,this.h);
+
+      }
+      else if(this.type=="line"){
+        //line
+        context.beginPath();
+        context.moveTo(this.x,this.y);
+        context.lineTo(this.x+this.w,this.y+this.h);
+        context.lineWidth=2;
+        context.strokeStyle='#f6ff76';
+        context.stroke();
+      }
+      else if(this.type=="tri"){
+        //삼각형
+
+        context.beginPath();
+        context.moveTo(this.x,this.y);
+        context.lineTo(this.x+this.w,this.y);
+        context.lineTo(this.x+this.w,this.y+this.h);
+        context.closePath();
+        context.fillStyle='#22d42b';
+        context.fill();
+
+      }
+      else if(this.type=="label"){
+        context.fillStyle='#0f0206';
+        context.moveTo(this.x,this.y);
+        context.lineTo(this.w,this.h);
+
+      }else if(this.type=="point"){
+        context.fillStyle='#22d42b';
+        context.moveTo(this.x,this.y);
+        context.lineTo(this.w,this.h);
+
+      }else if(this.type=="circle"){
+        context.beginPath();
+        context.arc(this.x,this.y,this.w,0,2.0*Math.PI,false);
+        context.closePath();
+        context.fillStyle='#d43719';
+        context.fill();
+      }
+
+
   }
 
-  function drawTreeDFS(tree){
-
-
+  function drawTreeDFS(tree,id){
+    //root부터 시작해서
+    //CIDNUM인 애부터 시작
+    document.write(tree.nodeNum);//3개
+    for(var i=0; i < tree.nodeNum ;i++){
+      document.write("찾자12");
+      if(tree.nodeArray[i].ID === id){
+        //현재 아이디에 해당하는 애를 찾기
+        //check가 되어있는가?
+        document.write("찾자2");
+        if(tree.nodeArray[i].check===false){//체크가 아직 안되었으면
+          tree.nodeArray[i].data.draw();//그리고
+          tree.nodeArray[i].check = true;//그렸다고 표시하고
+          if(tree.nodeArray[i].cIDNum===0){//자녀가 없는 애면
+            drawTreeDFS(tree , tree.nodeArray[i].pID);//위로 올라가기
+          }
+          else {
+            drawTreeDFS(tree,tree.nodeArray[i].cID[0]);//아래로 내려가기
+          }
+        }//체크가 아직 안되었으면
+        else{//이미 그려진상태, 다시 올라온 상황
+          //맨위면
+          if(tree.nodeArray[i].pID===null){//끝내기
+            break;
+          }
+          else{
+            for(var k=0 ; k<tree.nodeArray[i].cIDNum;k++){//안그린애 찾기
+              //this.nodeArray[i].cID[k]이 아이디에 해당하는 애의 check
+              for(var m=0; m < tree.nodeNum ;m++){
+                if(tree.nodeArray[i].cID[k]===tree.nodeArray[m].ID){//특정 cid를 찾음
+                  if(tree.nodeArray[m].check===false){//아직 안그려졌으면
+                    drawTreeDFS(tree,tree.this.nodeArray[m].ID);//걔로
+                  }
+                }
+              }
+            }
+            //for 끝났는데 없으면 다그린거니까 올리기
+            drawTreeDFS(this,this.nodeArray[i].pID);
+          }
+        }
+      }
+      document.write("찾자3");
+    }
   }
-
+  //root
+  var element0 = new data(100,100,1000,800,"rec");
   // Draw 파트
-  var tree = new Tree(new Node(12, -1,null, null));
+  var tree = new Tree(new Node(12, element0,null, null));
   /*
   tree.add(new Node(23,0,12,null));
   tree.add(new Node(46,1,12,null));
@@ -147,17 +235,19 @@
   tree.add(new Node(15,1,23,null));
   tree.add(new Node(7,1,46,null));
   */
-  tree.printNode();
-  document.write("현 노드개수");
-  document.write(tree.nodeNum);
 
-  var element = new data(100,200,300,400);
-  element.draw();
+  //트리생성
+  var element = new data(300,300,500,500,"rec");
   tree.add(new Node(23,element,12,null));
-  var element = new data(100,200,30,70);
-  element.draw();
-  tree.add(new Node(33,element,23,null));
+  var element1 = new data(350,350,300,250,"tri");
+  tree.add(new Node(33,element1,23,null));
+  var element2 = new data(500,350,100,250,"rec");
+  tree.add(new Node(5,element2,23,null));
 
+  tree.printNode();
+
+  //draw 실행
+  drawTreeDFS(tree,12);
 
 
 </script>
