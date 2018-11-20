@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HW4-2</title>
+  <!--
+   A. Tree data structure should be a tree of simple nodes with id number, arbitrary number of children.
+   B. Set of basic methods/procedures such as: create_root, add_node, delete_node, search_node, etc.
+   C. Extend the node structure to contain a graphic element like a window, line, label, rectangle, point,
+   etc. We will call these “graphic nodes. Different graphic elements will need different attributes (only include the very basic ones).
+   A. Modify the tree ADT so that the graphic nodes can be managed and one can create/add/delete/search different types of graphic nodes.
+   B. Be able to render the graphic elements in the whole tree.
+   C. Write a short program to demonstrate you can construct a tree with graphic nodes and render them on the web browser canvas.
+ -->
+  <script type="text/javascript">
+  </script>
+
+  <style type="text/css">
+    canvas { border: 1px solid black; }
+  </style>
+</head>
+<body>
+<canvas id="canvas" width = "1500" height = "1000"></canvas>
+
+이것은 과제 4
+
+<script>
+  var canvas = document.getElementById("canvas");
+  var context= canvas.getContext("2d");
+  //노드 객체
+
+  Node = function(ID,data,pID, cID){
+    this.ID = ID;
+    this.data = data;
+    this.pID=pID;
+    this.cID=[];//arbitary
+    this.cID[0]=cID;
+    if(cID == null){//없으면
+      this.cIDNum=0;
+    }else{
+      this.cID[0]=cID;
+      this.cIDNum=1;
+    }
+  }
+  Tree = function(rootNode){
+    this.nodeArray = [];
+    this.nodeArray.push(rootNode);
+    this.nodeNum = 1;
+  }
+  // 노드 추가
+  Tree.prototype.search_node = function(findID) {
+    var num = this.nodeNum;
+    for(var i=0; i < num ;i++){
+      if(this.nodeArray[i].ID === findID){
+        return i;//몇번째인가
+      }
+    }
+  }
+  Tree.prototype.add = function(newNode) {
+    //newnode의 부모 아이디 찾기
+   var num = this.nodeNum;
+
+   for(var i=0; i < num ;i++){
+
+      if(this.nodeArray[i].ID == newNode.pID){//노드추가
+        this.nodeArray[i].cID[this.nodeArray[i].cIDNum]=newNode.ID;
+        this.nodeArray[i].cIDNum++;
+      }
+    }
+    //cid에 추가하기
+    //cid개수늘리기
+    this.nodeArray.push(newNode);
+    this.nodeNum ++ ;
+  }
+ Tree.prototype.delete = function(deleteID) {
+   //cid 없애주기
+   //말단제거
+   //중간제거-> 얘는 다 지워야할듯
+   document.write("지웠다1");
+   document.write("<br>");
+   var pidinfo= 0;
+   for(var i=0; i < this.nodeNum ;i++){
+     if(this.nodeArray[i].ID === deleteID){//부모인거
+       pidinfo=this.nodeArray[i].pID;
+       delete this.nodeArray[i];
+       this.nodeNum--;
+        }
+     }
+
+    for(var j=0; j < this.nodeNum ;j++) {
+      if (this.nodeArray[j].ID === pidinfo) {//부모인거 찾음
+        for(var s=0;s<this.nodeArray[j].cIDNum;s++){
+          if(this.nodeArray[j].cID[s]===deleteID){
+            delete this.nodeArray[j].cID[s];
+            this.nodeArray[j].cIDNum--;
+          }
+        }
+      }
+    }
+  }
+  Tree.prototype.printNode = function() {
+    var num = this.nodeNum;
+    document.write("<br>");
+    for(var i=0; i < num ;i++){
+      document.write("ID:");
+      document.write(this.nodeArray[i].ID);
+      document.write("<br>");
+      document.write("data:");
+      document.write(this.nodeArray[i].data);
+      document.write("<br>");
+      document.write("pID:");
+      document.write(this.nodeArray[i].pID);
+      document.write("<br>");
+      document.write("cID:");
+      document.write(this.nodeArray[i].cID[0]);
+      document.write("<br>");
+      document.write("cIDnum:");
+      document.write(this.nodeArray[i].cIDNum);
+      document.write("<br>");
+      document.write("<br>"); document.write("<br>");
+    }
+  }
+
+
+  data = function(x, y, w, h){
+    this.x = x;//->이것은 상위노드에 비해 상대적인 수치입니다.
+    this.y = y;
+    this.w = w;
+    this.h = h;
+  }
+  data.prototype.draw=function(){
+    context.strokeRect(this.x,this.y,this.w,this.h);
+  }
+
+  function drawTreeDFS(tree){
+
+
+  }
+
+  // Draw 파트
+  var tree = new Tree(new Node(12, -1,null, null));
+  /*
+  tree.add(new Node(23,0,12,null));
+  tree.add(new Node(46,1,12,null));
+  tree.add(new Node(10,1,23,null));
+  tree.add(new Node(5,1,10,null));
+  tree.add(new Node(15,1,23,null));
+  tree.add(new Node(7,1,46,null));
+  */
+  tree.printNode();
+  document.write("현 노드개수");
+  document.write(tree.nodeNum);
+
+  var element = new data(100,200,300,400);
+  element.draw();
+  tree.add(new Node(23,element,12,null));
+  var element = new data(100,200,30,70);
+  element.draw();
+  tree.add(new Node(33,element,23,null));
+
+
+
+</script>
+</body>
+</html>
