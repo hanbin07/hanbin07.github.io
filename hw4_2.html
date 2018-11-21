@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>HW4-2</title>
+  <meta charset="UTF-8">
+  <title>HW4-2</title>
   <!--
    A. Tree data structure should be a tree of simple nodes with id number, arbitrary number of children.
    B. Set of basic methods/procedures such as: create_root, add_node, delete_node, search_node, etc.
@@ -29,99 +29,78 @@
   var context= canvas.getContext("2d");
   //노드 객체
 
-  Node = function(ID,data,pID, cID){
-    this.ID = ID;
-    this.data = data;
-    this.pID=pID;
-    this.cID=[];//arbitary
-    this.cID[0]=cID;
-    this.check=false;
-    if(cID == null){//없으면
-      this.cIDNum=0;
-    }else{
-      this.cID[0]=cID;
-      this.cIDNum=1;
-    }
+  Node = function(ID,data){
+    this.ID = ID;//본인 id
+    this.data = data; //element 넣을 곳
+    this.pNode = null;
+    this.cNode=[];
   }
+  Node.prototype.add = function (nNode){
+    this.cNode.push(nNode);
+    nNode.pNode = this;
+  }
+  Node.prototype.add = function (nNode){
+    this.cNode.push(nNode);
+    nNode.pNode = this;
+  }
+  Node.prototype.delete = function(){
+    if(this.pNode) {
+      var num = this.pNode.cNode.indexOf(this);
+      this.pNode.cNode.splice(num, 1);
+    }
+    this.pNode = null;
+  }
+
+  // 트리생성
+
   Tree = function(rootNode){
-    this.nodeArray = [];
-    this.nodeArray.push(rootNode);
-    this.nodeNum = 1;
+    this.rNode = rootNode;
   }
-  // 노드 추가
-  Tree.prototype.search_node = function(findID) {
-    var num = this.nodeNum;
-    for(var i=0; i < num ;i++){
-      if(this.nodeArray[i].ID === findID){
-        return i;//몇번째인가
+
+  Tree.prototype.add = function(pID,nNode) {
+    var pNode = this.search(pID);
+    if(pNode) {
+      pNode.add(nNode);
+    }
+    else {
+      alert("부모노드가 없음");
+    }
+  }
+
+  Tree.prototype.delete = function(dID) {
+    var node = this.search(dID);
+    node.delete();
+  }
+
+  Tree.prototype.drawDFS = function(draw){
+    function rec(node) {
+      draw(node);//일단 그리고
+      //자식에 대해 수행할겨
+      var length = node.cNode.length;//자식 개수만큼 수행할 것
+      for (var i = 0;i < length; i++) {
+        rec(node.cNode[i]);
       }
     }
+    rec(this.rNode);
   }
-  Tree.prototype.add = function(newNode) {
-    //newnode의 부모 아이디 찾기
-   var num = this.nodeNum;
 
-   for(var i=0; i < num ;i++){
-
-      if(this.nodeArray[i].ID == newNode.pID){//노드추가
-        this.nodeArray[i].cID[this.nodeArray[i].cIDNum]=newNode.ID;
-        this.nodeArray[i].cIDNum++;
+  Tree.prototype.search = function(ID){
+    //ID에 해당하는 것 반환해주는 함수-> DFS 방식
+    var rNode=null;
+    var search = function(node) {
+      if(node.ID === ID){
+        rNode = node;
       }
-    }
-    //cid에 추가하기
-    //cid개수늘리기
-    this.nodeArray.push(newNode);
-    this.nodeNum ++ ;
+    };
+    this.drawDFS(search);
+    return rNode;
   }
- Tree.prototype.delete = function(deleteID) {
-   var pidinfo= 0;
-   for(var i=0; i < this.nodeNum ;i++){
-     if(this.nodeArray[i].ID === deleteID){//부모인거
-       pidinfo=this.nodeArray[i].pID;
-       delete this.nodeArray[i];
-       this.nodeNum--;
-        }
-     }
-
-    for(var j=0; j < this.nodeNum ;j++) {
-      if (this.nodeArray[j].ID === pidinfo) {//부모인거 찾음
-        for(var s=0;s<this.nodeArray[j].cIDNum;s++){
-          if(this.nodeArray[j].cID[s]===deleteID){
-            delete this.nodeArray[j].cID[s];
-            this.nodeArray[j].cIDNum--;
-          }
-        }
-      }
-    }
-  }
-
-  Tree.prototype.printNode = function() {
-    //모든 노드정보 출력함수
-    var num = this.nodeNum;
-    document.write("<br>");
-    for(var i=0; i < num ;i++){
-      document.write("ID:");
-      document.write(this.nodeArray[i].ID);
-      document.write("<br>");
-      document.write("data:");
-      document.write(this.nodeArray[i].data);
-      document.write("<br>");
-      document.write("pID:");
-      document.write(this.nodeArray[i].pID);
-      document.write("<br>");
-      document.write("cID:");
-      document.write(this.nodeArray[i].cID[0]);
-      document.write("<br>");
-      document.write("cIDnum:");
-      document.write(this.nodeArray[i].cIDNum);
-      document.write("<br>");
-      document.write("<br>"); document.write("<br>");
-    }
-  }
-
+  var drawNode = function(node) {
+    node.data.draw();
+  };
 
   data = function(x, y, w, h ,type){
-    this.x = x;//->이것은 상위노드에 비해 상대적인 수치입니다.
+    this.x = x;
     this.y = y;
     this.w = w;
     this.h = h;
@@ -129,135 +108,85 @@
   }
   data.prototype.draw=function(){
 
-      if(this.type==="rec"){
-        //사각형
+    if(this.type==="rec"){
+      //사각형
       context.fillStyle='#878bff';
       context.fillRect(this.x,this.y,this.w,this.h);
       context.strokeStyle='#0f0206';
       context.strokeRect(this.x,this.y,this.w,this.h);
 
-      }
-      else if(this.type==="line"){
-        //line
-        context.beginPath();
-        context.moveTo(this.x,this.y);
-        context.lineTo(this.x+this.w,this.y+this.h);
-        context.lineWidth=2;
-        context.strokeStyle='#f6ff76';
-        context.stroke();
-      }
-      else if(this.type==="tri"){
-        //삼각형
-
-        context.beginPath();
-        context.moveTo(this.x,this.y);
-        context.lineTo(this.x+this.w,this.y);
-        context.lineTo(this.x+this.w,this.y+this.h);
-        context.closePath();
-        context.fillStyle='#22d42b';
-        context.fill();
-
-      }
-      else if(this.type=="label"){
-        context.fillStyle='#0f0206';
-        context.moveTo(this.x,this.y);
-        context.lineTo(this.w,this.h);
-
-      }else if(this.type==="point"){
-        context.fillStyle='#22d42b';
-        context.moveTo(this.x,this.y);
-
-      }else if(this.type==="circle"){
-        context.beginPath();
-        context.arc(this.x,this.y,this.w,0,2.0*Math.PI,false);
-        context.closePath();
-        context.fillStyle='#d43719';
-        context.fill();
-      }
-
-
-  }
-
-  function drawTreeDFS(tree,id){
-    //root부터 시작해서
-    //CIDNUM인 애부터 시작
-    var drawtime=0;
-
-    for(var i=0; i < tree.nodeNum ;i++){
-
-      if(tree.nodeArray[i].ID === id){
-        //현재 아이디에 해당하는 애를 찾기
-        //check가 되어있는가?
-
-        if(tree.nodeArray[i].check===false){//체크가 아직 안되었으면
-          document.write("그리는 것의 아이디");
-          document.write(tree.nodeArray[i].ID);
-          document.write("<br>");
-          tree.nodeArray[i].data.draw();//그리고
-          tree.nodeArray[i].check = true;//그렸다고 표시하고
-          drawtime++;
-          if(tree.nodeArray[i].cIDNum===0){//자녀가 없는 애면
-            document.write("자녀없어서 올라감");
-            document.write("<br>");
-            drawTreeDFS(tree , tree.nodeArray[i].pID);//위로 올라가기
-          }
-          else {
-            document.write("첫자식으로");
-            document.write("<br>");
-            drawTreeDFS(tree,tree.nodeArray[i].cID[0]);//아래로 내려가기
-          }
-        }//체크가 아직 안되었으면
-        else{//체크된 것 이미 그려진상태, 다시 올라온 상황
-          //맨위면
-          //자식의 check값 찾기
-          if(tree.nodeArray[i].pID===null&&drawtime===tree.nodeNum) {//끝내기
-            document.write("drawtime");
-            document.write(drawtime);
-            document.write("<br>");
-          }
-          else {//밑이 남은거
-            for (var k = 0; k < tree.nodeArray[i].cIDNum; k++) {//안그린애 찾기
-              for (var m = 0; m < tree.nodeNum; m++) {
-                if (tree.nodeArray[i].cID[k] === tree.nodeArray[m].ID) {//특정 cid를 찾음
-                  if (tree.nodeArray[m].check === false) {//아직 안그려졌으면
-                    drawTreeDFS(tree, tree.nodeArray[m].ID);//걔로
-                  }
-                }
-              }
-            }
-            //for 끝났는데 없으면 다그린거니까 올리기
-
-            drawTreeDFS(this, tree.nodeArray[i].pID);
-          }
-        }
-      }
+    }
+    else if(this.type==="line"){
+      //line
+      context.beginPath();
+      context.moveTo(this.x,this.y);
+      context.lineTo(this.x+this.w,this.y+this.h);
+      context.lineWidth=2;
+      context.strokeStyle='#f6ff76';
+      context.stroke();
+    }
+    else if(this.type==="tri"){
+      //삼각형
+      context.beginPath();
+      context.moveTo(this.x,this.y);
+      context.lineTo(this.x+this.w,this.y);
+      context.lineTo(this.x+this.w,this.y+this.h);
+      context.closePath();
+      context.fillStyle='#22d42b';
+      context.fill();
 
     }
-  }
+    else if(this.type==="label"){
+      //글씨
+      context.fillStyle='#0f0206';
+      context.moveTo(this.x,this.y);
+      context.lineTo(this.w,this.h);
 
+    }else if(this.type==="point"){
+      context.fillStyle='#cecdd4';
+      context.moveTo(this.x,this.y);
+
+    }else if(this.type==="circle"){
+      context.beginPath();
+      context.arc(this.x,this.y,this.w,0,2.0*Math.PI,false);
+      context.closePath();
+      context.fillStyle='#d43719';
+      context.fill();
+    }
+  }
 
   //tree 생성
   //root
   var element0 = new data(100,100,1000,800,"rec");
-  element0.draw();
-  var tree = new Tree(new Node(12, element0,null, null));
-  //노드추가
+  var root = new Node(1,element0);
+  var tree = new Tree(root);
+
   var element = new data(250,200,300,400,"rec");
-  tree.add(new Node(23,element,12,null));
+  var node1 = new Node(2,element);
+  tree.add(1,node1);
 
   var element1 = new data(650,450,400,350,"rec");
-  tree.add(new Node(33,element1,12,null));
-  var element2 = new data(710,550,50,150,"circle");
-  tree.add(new Node(5,element2,33,null));
-  var element3 = new data(850,650,100,100,"tri");
-  tree.add(new Node(17,element3,33,null));
-  //var element4 = new data(500,350,100,250,"rec");
-  //tree.add(new Node(18,element4,23,null));
- //확인용 코드
-  tree.printNode();
+  var node2 = new Node(3,element1);
+  tree.add(1,node2);
 
-  //draw 실행
-  drawTreeDFS(tree,12);
+  var element3 = new data(310,350,50,150,"tri");
+  var node4 = new Node(4,element3);
+  tree.add(2,node4);
+
+  var element4 = new data(470,450,50,150,"circle");
+  var node5 = new Node(5,element4);
+  tree.add(2,node5);
+
+  var element5 = new data(800,650,70,150,"circle");
+  var node6 = new Node(6,element5);
+  tree.add(3,node6);
+
+
+  //DRAW PART
+  tree.drawDFS(drawNode);
+
+
+
 
 
 </script>
