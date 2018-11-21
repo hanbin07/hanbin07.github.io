@@ -128,7 +128,7 @@
     this.type=type;
   }
   data.prototype.draw=function(){
-    context.fillRect(this.x,this.y,this.w,this.h);
+
       if(this.type==="rec"){
         //사각형
       context.fillStyle='#878bff';
@@ -226,7 +226,7 @@
               }
             }
             //for 끝났는데 없으면 다그린거니까 올리기
-          
+
             drawTreeDFS(this, tree.nodeArray[i].pID);
           }
         }
@@ -242,14 +242,14 @@
   element0.draw();
   var tree = new Tree(new Node(12, element0,null, null));
   //노드추가
-  var element = new data(200,300,500,500,"rec");
+  var element = new data(250,200,300,400,"rec");
   tree.add(new Node(23,element,12,null));
 
-  var element1 = new data(250,350,200,150,"rec");
+  var element1 = new data(650,450,400,350,"rec");
   tree.add(new Node(33,element1,12,null));
-  var element2 = new data(250,350,100,250,"rec");
+  var element2 = new data(700,550,100,150,"rec");
   tree.add(new Node(5,element2,33,null));
-  var element3 = new data(500,550,100,150,"rec");
+  var element3 = new data(850,650,100,50,"rec");
   tree.add(new Node(17,element3,33,null));
   //var element4 = new data(500,350,100,250,"rec");
   //tree.add(new Node(18,element4,23,null));
