@@ -209,23 +209,25 @@
         }//체크가 아직 안되었으면
         else{//체크된 것 이미 그려진상태, 다시 올라온 상황
           //맨위면
-          if(tree.nodeArray[i].pID===null&&drawtime===tree.nodeNum){//끝내기
+          //자식의 check값 찾기
+          if(tree.nodeArray[i].pID===null&&drawtime===tree.nodeNum) {//끝내기
             document.write("drawtime");
             document.write(drawtime);
             document.write("<br>");
           }
-          else{
-            for(var k=0 ; k<tree.nodeArray[i].cIDNum;k++){//안그린애 찾기
-              for(var m=0; m < tree.nodeNum ;m++){
-                if(tree.nodeArray[i].cID[k]===tree.nodeArray[m].ID){//특정 cid를 찾음
-                  if(tree.nodeArray[m].check===false){//아직 안그려졌으면
-                    drawTreeDFS(tree,tree.nodeArray[m].ID);//걔로
+          else {//밑이 남은거
+            for (var k = 0; k < tree.nodeArray[i].cIDNum; k++) {//안그린애 찾기
+              for (var m = 0; m < tree.nodeNum; m++) {
+                if (tree.nodeArray[i].cID[k] === tree.nodeArray[m].ID) {//특정 cid를 찾음
+                  if (tree.nodeArray[m].check === false) {//아직 안그려졌으면
+                    drawTreeDFS(tree, tree.nodeArray[m].ID);//걔로
                   }
                 }
               }
             }
             //for 끝났는데 없으면 다그린거니까 올리기
-            drawTreeDFS(this,this.nodeArray[i].pID);
+          
+            drawTreeDFS(this, tree.nodeArray[i].pID);
           }
         }
       }
@@ -241,23 +243,21 @@
   var tree = new Tree(new Node(12, element0,null, null));
   //노드추가
   var element = new data(200,300,500,500,"rec");
-  element.draw();
   tree.add(new Node(23,element,12,null));
-  var element1 = new data(250,350,200,150,"tri");
-  element1.draw();
-  tree.add(new Node(33,element1,23,null));
-  var element2 = new data(550,350,50,250,"rec");
-  element2.draw();
-  tree.add(new Node(5,element2,23,null));
-  var element3 = new data(500,550,100,150,"tri");
- // tree.add(new Node(17,element3,5,null));
+
+  var element1 = new data(250,350,200,150,"rec");
+  tree.add(new Node(33,element1,12,null));
+  var element2 = new data(250,350,100,250,"rec");
+  tree.add(new Node(5,element2,33,null));
+  var element3 = new data(500,550,100,150,"rec");
+  tree.add(new Node(17,element3,33,null));
   //var element4 = new data(500,350,100,250,"rec");
   //tree.add(new Node(18,element4,23,null));
  //확인용 코드
   tree.printNode();
 
   //draw 실행
-  //drawTreeDFS(tree,12);
+  drawTreeDFS(tree,12);
 
 
 </script>
