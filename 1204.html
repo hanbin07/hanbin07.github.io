@@ -180,27 +180,27 @@
     }else if(this.type==="window"){
       var barInterval = (this.h/10);
       context.fillStyle='#f1fff6';
-      context.fillRect(this.x,this.y-barInterval,this.w,barInterval);
-      context.strokeRect(this.x,this.y-barInterval,this.w,barInterval);
+      context.fillRect(this.x,this.y,this.w,barInterval);
+      context.strokeRect(this.x,this.y,this.w,barInterval);
       context.font = '27px 궁서';
       //context.fillText(title, x+(this.w/5), y-(barInterval/4));
       //숨기기 버튼
       context.fillStyle='#4bccff';
-      context.strokeRect(this.x+0.8*this.w,this.y-0.8*barInterval,0.7*barInterval,0.7*barInterval);
-      context.fillRect(this.x+0.8*this.w,this.y-0.8*barInterval,0.7*barInterval,0.7*barInterval);
+      context.strokeRect(this.x+0.8*this.w,this.y+0.1*barInterval,0.7*barInterval,0.7*barInterval);
+      context.fillRect(this.x+0.8*this.w,this.y+0.1*barInterval,0.7*barInterval,0.7*barInterval);
       context.fillStyle='#000';
-      context.fillText("__", this.x+0.8*this.w,this.y-0.4*barInterval);
+      context.fillText("__", this.x+0.8*this.w,this.y+0.6*barInterval);
       //지우기 버튼
       context.fillStyle='#ff8487';
-      context.fillRect(this.x+0.9*this.w,this.y-0.8*barInterval,0.7*barInterval,0.7*barInterval);
-      context.strokeRect(this.x+0.9*this.w,this.y-0.8*barInterval,0.7*barInterval,0.7*barInterval);
+      context.fillRect(this.x+0.9*this.w,this.y+0.1*barInterval,0.7*barInterval,0.7*barInterval);
+      context.strokeRect(this.x+0.9*this.w,this.y+0.1*barInterval,0.7*barInterval,0.7*barInterval);
       context.fillStyle='#000';
-      context.fillText("X", this.x+0.91*this.w,this.y-0.25*barInterval);
+      context.fillText("X", this.x+0.91*this.w,this.y+0.7*barInterval);
 
       //window 내용
       context.fillStyle='#f1fff6';
-      context.strokeRect(this.x,this.y,this.w,this.h);
-      context.fillRect(this.x,this.y,this.w,this.h);
+      context.strokeRect(this.x,this.y+barInterval,this.w,this.h-barInterval);
+      context.fillRect(this.x,this.y+barInterval,this.w,this.h-barInterval);
 
     }
   }
