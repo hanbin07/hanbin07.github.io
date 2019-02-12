@@ -1,0 +1,162 @@
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>Canvas</title>
+
+  <script type="text/javascript">
+  </script>
+
+  <style type="text/css">
+    canvas { border: 1px solid black; }
+  </style>
+</head>
+
+
+
+<body>
+<canvas id="canvas" width = "1500" height = "1000"></canvas>
+
+<script>
+
+  var canvas = document.getElementById("canvas");
+  var context= canvas.getContext("2d");
+
+  var barInterval = 40;
+  var IsFold = false;
+
+  function TextCenter(x,y,w,h){
+    //텍스트를 가운데 정렬해주는 함수
+
+  }
+//윈도우 생성
+  function createWindow(id,x,y,w,h,title) {
+    //상단바
+    context.strokeRect(x,y-barInterval,w,barInterval);
+    context.font = '28px 궁서';
+    context.fillText(title, x+(w/5), y-(barInterval/4));
+    //숨기기 버튼
+    context.fillStyle='#4bccff';
+    context.strokeRect(x+0.8*w,y-0.8*barInterval,0.7*barInterval,0.7*barInterval);
+    context.fillRect(x+0.8*w,y-0.8*barInterval,0.7*barInterval,0.7*barInterval);
+    context.fillStyle='#000';
+    context.fillText("__", x+0.8*w,y-0.4*barInterval);
+    //지우기 버튼
+    context.fillStyle='#ff8487';
+    context.fillRect(x+0.9*w,y-0.8*barInterval,0.7*barInterval,0.7*barInterval);
+    context.strokeRect(x+0.9*w,y-0.8*barInterval,0.7*barInterval,0.7*barInterval);
+    context.fillStyle='#000';
+    context.fillText("X", x+0.91*w,y-0.25*barInterval);
+
+    //window 내용
+    context.strokeRect(x,y,w,h);
+
+
+  }
+  function createButton(x,y,w,h,r,title){
+    //버튼은 둥글게
+    context.beginPath();
+      context.moveTo(x + r, y); //오른쪽 상단 모서리를 그리기 위한 시작점으로 이동
+      context.arcTo((x+w), y, (x+w), (y+h), r);  //오른쪽 상단 모서리
+      context.arcTo((x+w), (y+h), x, (y+h), r); //오른쪽 하단 모서리
+      context.arcTo(x, (y+h), x, y, r); //왼쪽 하단 모서리
+      context.arcTo(x, y, (x+r), y, r); //왼쪽 상단 모서리
+    context.stroke();
+    context.font = '28px 궁서';
+    context.fillText(title, x+0.2*w, y+0.6*h);
+
+  }
+  function createTextBox(x,y,w,h,title){
+
+    context.strokeRect(x,y,w,h);
+    context.fillStyle='#4bccff';
+    context.fillRect(x,y,w,h);
+    context.fillStyle='#F1FFFD';
+    context.font = '28px 궁서';
+    //context.textAlign='center';->캔버스일 때 쓰는 함수
+    context.fillText(title, x+0.1*w, y+0.6*h);
+    //context.fillText(title, x, y+0.6*h);
+    //alert(title.length);
+
+  }
+  function createMenuBar(x,y,w,h,title,array){
+    //상단메뉴
+    var tab=30;
+
+   context.fillStyle='#feffc5';
+    context.fillRect(x,y,w,h);
+    context.strokeRect(x,y,w,h);
+    context.font = '25px serif';
+    context.fillStyle='#000';
+    context.fillText(title, x+0.1*w, y+0.6*h);
+    //메뉴 종속
+    for(var i=0 ; i<array.length;i++){
+      context.fillStyle='#feffc5';
+      context.fillRect(x+tab,y+h*(i+1),w,h);
+      context.strokeRect(x+tab,y+h*(i+1),w,h);
+      context.fillStyle='#000';
+      context.fillText(array[i],x+tab+0.1*w, y+h*(i+1)+0.6*h);
+    }
+
+  }
+  function clickRange(x,y,w,h){
+    //클릭된 영역을 계산하는 함수
+    //x,y,w,h
+
+    canvas.addEventListener("click", function(e) {
+      //alert('x좌표:' + e.layerX + ', y좌표:' +  e.layerY);
+
+      if(x<=e.layerX&&x+w>=e.layerX&&y<=e.layerY&&e.layerY<=y+h){
+        IsClick=true;
+        alert('Button is Click');
+      }
+
+    });
+
+
+  }
+
+
+  function clickMouse(x,y,w,h) {
+    canvas.addEventListener("click", function(e) {
+      console.log({x: e.layerX, y: e.layerY});
+     // alert('x좌표:' + e.layerX + ', y좌표:' +  e.layerY);
+      //X버튼
+      if(416<e.layerX&&443>e.layerX&&168<e.layerY&&e.layerY<197){
+        context.clearRect(x-10,y-1.1*barInterval,w+20,h+1.2*barInterval);
+      }
+      //_버튼
+      if(382<e.layerX&&407>e.layerX&&170<e.layerY&&e.layerY<194){
+        if(IsFold==false){
+          //펼쳐있으면
+          context.clearRect(x-2,y,w+5,h+1);
+          IsFold=true;
+        }else{
+          //접혀있으면 펼치기
+          context.strokeRect(x,y,w,h);
+          IsFold=false;
+        }
+      }
+    });
+
+  }
+
+ //함수 호출부분
+  createWindow("one",100,200,350,200,"My_Window");
+  clickMouse(100,200,350,200);
+  createButton(500,350,250,100,30,"My_Button");
+  clickRange(500,350,250,100);
+  createButton(200,450,250,80,30,"My_Button2");
+  clickRange(200,450,250,80);
+  createTextBox(80,600,250,50,"My_TextBox");
+  createTextBox(400,700,250,70,"My_TextBox2");
+
+
+  var array = ['item1', 'item2', 'item3'];
+  createMenuBar(700,550,250,60,"My_Menu_1",array);
+
+</script>
+
+
+</body>
+
+</html>
