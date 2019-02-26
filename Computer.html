@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Computer</title>
+    <link rel ="stylesheet" href="css/bootstrap.css">
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready( function() {
+            $("#sidebar-wrapper").load("SideBar.html");  // 원하는 파일 경로를 삽입하면 된다
+            $("#footers").load("footer.html");  // 추가 인클루드를 원할 경우 이런식으로 추가하면 된다
+        });
+
+        function Show() {
+            document.getElementById("pdfview").style.display = "block";
+            document.getElementById("show").style.display = "none";
+            document.getElementById("hide").style.display = "block";
+        }
+        function hide() {
+            document.getElementById("pdfview").style.display = "none";
+            document.getElementById("show").style.display = "block";
+            document.getElementById("hide").style.display = "none";
+        }
+    </script>
+</head>
+
+<body>
+<div id="page-wrapper">
+    <!-- 사이드바 -->
+    <div id="sidebar-wrapper"></div>
+
+    <!-- 본문 -->
+    <div id="page-content-wrapper">
+        <div class="container-fluid">
+            <h1>Architecture</h1>
+            <p>컴퓨터 관련 활동을 모아 놓은 페이지 입니다.</p>
+            <br>
+            <h2>Computer Graphics<br></h2>
+            Ray Tracing을 이용한 Mirror Room scene 구현
+            Octree를 이용하여 최적화 후 성능 비교.
+            결과적으로 Octree를 이용한 Scene이 8배 빠른 속도 관찰됨<br> <br>
+            <video style = "width:40%; height:40%" src = "computer/octree.mp4" autoplay controls muted></video>
+            <video style = "width:40%; height:40%" src = "computer/withoutoctree.mp4" autoplay controls muted></video>
+            <br>
+            <button id ="show" onclick="Show()">View a detailed description by PPT</button>
+            <button id ="hide" onclick="hide()" style="display: none">Hide Detailed description</button>
+            <div id="pdfview" style="display: none;">
+                <iframe style = "width:50%; height:400px" src="computer/Mirror%20Room발표.pdf">
+                </iframe>
+            </div>
+            <br> <br>
+
+            <!--사진이랑 영상 추가하기-->
+            <br>
+            <h2>Game Programming<br></h2>
+            Unity 2D, Unity3D<br>
+            <!--게임설명 및 영상 추가하기-->
+            <br>
+            <h2>HCI<br></h2>
+            Photo Organization SoftWare<br>
+            <a href="https://drive.google.com/file/d/1bfccKgrJJlAaf8UAFIeypvO_ReVeDNax/view?usp=sharing">Explanation PPT</a>
+            <br>
+            <a href="https://drive.google.com/file/d/13r-8UBrKZo9_00HmdtLhiudD6-HHvZML/view?usp=sharing">Final Report</a>
+            <br>
+            <a href="https://drive.google.com/open?id=1M-eeAn_IO1JW8vEwJcFpFtvU_lpbLfdJ">Final Implementation Source</a>
+            <!--설명 ppt랑 프로그램 추가하기-->
+            <br> <br>
+            <h2>Operating System<br></h2>
+            CPU Scheduler Simulator(C language)<br>
+            <!--보고서 추가하기-->
+            <br>
+            <h2>Computer Architecture<br></h2>
+            Arm Architecture<br>
+            <!--보고서 및 프로젝트 추가하기-->
+            <br>
+            <h2>Tutorial</h2>
+            <a href="https://blog.naver.com/ihanbin">C language Tutorial</a>
+            <!--링크 추가하기-->
+
+        </div>
+    </div>
+    <!-- /본문 -->
+    <div id="footers"></div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+</body>
+
+</html>
