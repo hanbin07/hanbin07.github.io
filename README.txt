@@ -1,10 +1,10 @@
 READ ME
 
-THIS IS HANBIN's WEBSITE
+인간컴퓨터상호작용입문(Human Computer Interaction) 
+Assignment #1
 
-Thank you for visiting.
+2015170313 한빈
 
-If You Need Contacting me then Please send me an email
+URL:
 
-ihanbin@naver.com
-
+2018-2 인간 컴퓨터 상호작용 입문 과제함 클릭->과제1 클릭-> 워드문서(과제)
