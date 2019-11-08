@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Computer</title>
+    <link rel ="stylesheet" href="css/bootstrap.css">
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready( function() {
+            $("#sidebar-wrapper").load("SideBar.html");  // 원하는 파일 경로를 삽입하면 된다
+            $("#footers").load("footer.html");  // 추가 인클루드를 원할 경우 이런식으로 추가하면 된다
+        });
+
+        function Show() {
+            document.getElementById("pdfview").style.display = "block";
+            document.getElementById("show").style.display = "none";
+            document.getElementById("hide").style.display = "block";
+        }
+        function hide() {
+            document.getElementById("pdfview").style.display = "none";
+            document.getElementById("show").style.display = "block";
+            document.getElementById("hide").style.display = "none";
+        }
+    </script>
+</head>
+
+<body>
+<div id="page-wrapper">
+    <!-- 사이드바 -->
+    <div id="sidebar-wrapper"></div>
+
+    <!-- 본문 -->
+    <div id="page-content-wrapper">
+        <div class="container-fluid">
+            <h1>Computer</h1>
+            <p>This page is a collection of computer-related activities.</p>
+            <br>
+            <h2>▶2D/3D Mixed Interface for Furniture Placement in Smartphone-based Mobile Augmented Reality</h2>
+            <div class="container-fluid">
+                <h3> VRST 2019 Poster.</h3>
+                <h4> Abstract.</h4>
+                We propose to use an approximate 2D map of the environment generated from the latest environment modeling technology <br>
+                and enhance the object manipulation performance for the touch based mobile augmented reality<br>
+                We validated the advantage of the proposed interface through a pilot experiment <br>
+                and confirmed that the use of the 2D map helps reduce the task completion time almost 2 times and improve the usability as well.<br> <br>
+                <video style = "width:40%; height:40%" src = "computer/2D%203D%20Mixed%20Interface%20for%20Funiture%20Placement%20in%20Smartphone-based%20Mobile%20Augmented%20Reality.mp4" autoplay controls muted></video>
+                <br>
+                <br> <br>
+            </div>
+            <h2>▶Interactive Visualization<br></h2>
+            <div class="container-fluid">
+                <h3>Project : Particle System</h3>
+                GPU based Particle System<br>
+                Implementation of the Physical Environment of the Particle System based on the Sample Code provided by CUDA<br>
+                <strong>Particle Number</strong> : 10000<br>
+                Sky Box Implementation AND Cloud picture Texture Mapping<br>
+                Tornado Path Following Implementation - Each particle gives a force that follows a circular orbit and a force that rises<br> <br>
+                <video style = "width:30%; height:30%" src = "computer/running%20result_video_한빈.mp4" autoplay controls muted></video><br>
+
+                <a href="computer/MiniProject%20Report_2015170313_한빈.docx">Final Report Download</a><br> <br>
+            </div>
+
+
+
+        </div>
+    </div>
+    <!-- /본문 -->
+    <div id="footers"></div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+</body>
+
+</html>
