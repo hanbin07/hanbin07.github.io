@@ -67,16 +67,19 @@ body {
   text-align: left;
   background-color: rgba(15, 34, 35, 0.02);
 }
+
+
 /* 사이드바 래퍼 스타일 */
 #page-wrapper{
-  padding-left:250px;
+  padding-left:300px;
+  background: rgb(255, 255, 255);
 }
 #sidebar-wrapper{
   position: fixed;
-  width: 250px;
+  width: 300px;
   height: 100%;
-  margin-left: -250px;
-  background: #000;
+  margin-left: -300px;
+  background: rgb(216, 236, 247);
   overflow-x: hidden;
   overflow-y: auto;
 }
@@ -84,6 +87,22 @@ body {
   width: 100%;
   padding: 20px;
 }
+
+/*indedx page 스타일*/
+#hb-Box2{
+  color: rgb(49, 56, 60); 
+  padding: 10px; 
+  margin: 10px;
+}
+
+#hb-Box1{
+  width:1000px; 
+  text-align: left; 
+  line-height:30px; 
+  font-size: 18px; 
+  color:rgb(49, 59, 65);
+}
+
 /* 사이드바 스타일 */
 
 .sidebar-nav {
@@ -636,7 +655,7 @@ pre code {
   padding-left: 15px;
   margin-right: auto;
   margin-left: 10px;
-  color: rgba(90, 98, 104, 0.6);
+  color: rgb(216, 237, 252);
 }
 
 .row {
