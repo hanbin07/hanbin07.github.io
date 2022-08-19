@@ -74,16 +74,13 @@ body {
   padding-left:300px;
   background: rgb(255, 255, 255);
 }
-
 #sidebar-wrapper{
   position: fixed;
   width: 300px;
   height: 100%;
   margin-left: -300px;
-  background: rgb(56, 60, 62);
+  background: rgb(216, 236, 247);
   overflow-x: hidden;
-  font-size: 18px; 
-  color: rgb(247, 238, 238);
   overflow-y: auto;
 }
 #page-content-wrapper {
@@ -109,7 +106,7 @@ body {
 /* 사이드바 스타일 */
 
 .sidebar-nav {
-  width: 300px;
+  width: 250px;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -132,7 +129,7 @@ body {
 }
 
 .sidebar-nav > .sidebar-brand {
-  font-size: 1.6em;
+  font-size: 1.3em;
   line-height: 3em;
 }
 
