@@ -89,19 +89,35 @@ body {
 }
 
 /*indedx page 스타일*/
+#hb-Box4{
+  display: inline-block;
+  width:200px; 
+  height: 120px;
+}
+
+#hb-Box3{
+  display: inline-block;
+  width:800px; 
+  height:150px;
+  color: rgb(49, 56, 60); 
+  margin-bottom: 10px;
+}
+
 #hb-Box2{
+  width:1200px; 
   color: rgb(49, 56, 60); 
   padding: 10px; 
   margin: 10px;
 }
 
 #hb-Box1{
-  width:1000px; 
+  width:1400px; 
   text-align: left; 
   line-height:30px; 
   font-size: 18px; 
   color:rgb(49, 59, 65);
 }
+
 #h1-w{
   margin-top: 0;
   margin-bottom: 0.5 rem;
