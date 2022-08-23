@@ -102,7 +102,12 @@ body {
   font-size: 18px; 
   color:rgb(49, 59, 65);
 }
-
+#h1-w{
+  margin-top: 0;
+  margin-bottom: 0.5 rem;
+  font-size: 30px; 
+  color: #989b9e;
+}
 /* 사이드바 스타일 */
 
 .sidebar-nav {
@@ -148,6 +153,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0.5rem;
   color: #3c3e40;
 }
+
 
 p {
   margin-top: 0;
