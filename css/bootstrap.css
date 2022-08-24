@@ -106,7 +106,7 @@ body {
 #hb-Box2{
   width:1200px; 
   color: rgb(49, 56, 60); 
-  padding: 10px; 
+  padding-left: 10px; 
   margin: 10px;
 }
 
@@ -126,6 +126,13 @@ body {
   color: #989b9e;
 }
 /* 사이드바 스타일 */
+
+#arc-box{
+  display: inline-block;
+  font-size: 20px; 
+  font-weight: bold;
+  width:300px; 
+}
 
 .sidebar-nav {
   width: 250px;
