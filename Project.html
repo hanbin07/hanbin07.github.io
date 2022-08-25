@@ -33,16 +33,69 @@
     <!-- 본문 -->
     <div id="page-content-wrapper">
         <div class="container-fluid">
-            <h1>Computer</h1>
-            <p>This page is a collection of computer-related activities.</p>
+            <h1>Computer Projects</h1>
             <br>
-            <h2>▶Computer Graphics</h2>
             <div class="container-fluid">
-                <h3>Project : Mirror Room scene by Ray Tracing</h3>
+                <h3>VR controller for Musical Instruments</h3>
+                <br>
+                <img style="width: 20cm; padding:10px;  margin-left: 10px; " src="Portfolio-images/5_1_user.PNG"><br>
+                <br>
+                <div style=" width: 25cm; padding:10px;  margin-left: 10px; padding-top: 20px; margin-top: 20px;color: #484d50 ;font-size: 18px" id ="MYprofile">
+                    Hand position and finger pose were measured using a Flex sensor and IMU. Users can play in a Virtual Environment without an actual instrument. 
+                    Users can play musical instruments such as piano and guitar.
+                    The controller consists of 5 flex sensors for sensing finger pose. Using 9-axis IMU for sensing hand rotation, 
+                    and a microcontroller (MBN52832) for processing sensor data. We used mux to collect data from the five flex sensors, and the IMU data is transmitted through the I2C protocol.
+                    <br>
+                </div>
+
+            </div>
+
+            <div class="container-fluid">
+                <h3>Low cost VR controller</h3>
+                <br>
+                <img style="width: 20cm; padding:10px; margin-left: 10px; float: left;" src="Portfolio-images/6_1_game.PNG">
+                <img style="width: 20cm; padding:10px; margin-left: 10px; float: left;" src="Portfolio-images/6_2_3cont.PNG">
+                <br>
+                <div style=" width: 20cm;padding:10px; margin-left: 10px; padding-top: 20px;  margin-top: 20px;color: #484d50 ;font-size: 18px" id ="MYprofile">
+                    Make VR controllers in an inexpensive and accessible way using cardboard boxes. It can be used for shooting games, racing games, and simulation games. It is a non-electricity controller.
+                    
+                </div>
+            
+            </div>
+
+            <div class="container-fluid">
+                <h3>Virtual Reality Library</h3>
+    
+                <br>
+                <img style="width: 20cm; padding:10px;  margin-left: 10px; float: left;" src="Portfolio-images/7_1.PNG">
+                <br>
+                <div style=" width: 20cm;padding:10px; margin-left: 10px; padding-top: 20px; margin-top: 20px;color: #484d50 ;font-size: 18px" id ="MYprofile">
+                    We developed a system that a mobile VR app and links it with an offline library. Non-contact library technology allows people to look around offline libraries and rent books. 
+                    I implemented a virtual reality library based on the information of books held in offline libraries.
+                    <br>
+                </div>
+                <br>
+
+
+            </div>
+
+            <div class="container-fluid">
+                <h3>3D Room-scale Reconstruction</h3>
+                Reconstruct indoor scene<br>
+                3D Scan in Room-scale(BundleFusion)<br>
+                3D Object Detection (3D-BoNet)<br>
+                3D Primitive Fitting (SPFN, Supervised Primitive Fitting Network)<br> <br>
+                <img style = "width:45%; height:60%" src = "images/19_cg_explain.JPG"><br> <br>
+
+                <!--<a href="computer/MiniProject%20Report_2015170313_한빈.docx">Final Report Download</a><br> <br>-->
+            </div>
+
+            <div class="container-fluid">
+                <h3>Mirror Room scene by Ray Tracing</h3>
                 Optimized scene using Data Structure(Octree).<br>
                 As a result, Improves scene speed by 8x with octree.<br> <br>
-                <video style = "width:40%; height:40%" src = "computer/octree.mp4" autoplay controls muted></video>
-                <video style = "width:40%; height:40%" src = "computer/withoutoctree.mp4" autoplay controls muted></video>
+                <video style = "width:25%; height:40%" src = "computer/octree.mp4" autoplay controls muted></video>
+                <video style = "width:25%; height:40%" src = "computer/withoutoctree.mp4" autoplay controls muted></video>
                 <br>
                 <button id ="show" onclick="Show()">View a detailed description by PPT</button>
                 <button id ="hide" onclick="hide()" style="display: none">Hide Detailed description</button>
@@ -52,10 +105,11 @@
                 </div>
                 <br> <br>
             </div>
-            <h2>▶Interactive Visualization<br></h2>
+
             <div class="container-fluid">
-                <h3>Project : Particle System</h3>
-                GPU based Particle System<br>
+
+                <h3>GPU based Particle System</h3>
+
                 Implementation of the Physical Environment of the Particle System based on the Sample Code provided by CUDA<br>
                 <strong>Particle Number</strong> : 10000<br>
                 Sky Box Implementation AND Cloud picture Texture Mapping<br>
@@ -64,34 +118,24 @@
 
                 <a href="computer/MiniProject%20Report_2015170313_한빈.docx">Final Report Download</a><br> <br>
             </div>
-            <h2>▶(Deep Learning) Reconstruct indoor scene.<br></h2>
-            <div class="container-fluid">
-                <h3>3D Room-scale Reconstruction</h3>
-                Reconstruct indoor scene<br>
-                3D Scan in Room-scale(BundleFusion)<br>
-                3D Object Detection (3D-BoNet)<br>
-                3D Primitive Fitting (SPFN, Supervised Primitive Fitting Network)<br> <br>
-                <img style = "width:80%; height:80%" src = "images/19_cg_explain.JPG"><br> <br>
 
-                <!--<a href="computer/MiniProject%20Report_2015170313_한빈.docx">Final Report Download</a><br> <br>-->
-            </div>
             <br>
-            <h2>▶Artificial Inteligence<br></h2>
+
             <div class="container-fluid">
                 <h3>GAN Experience</h3>
                 Using GAN. Image Generation and Generate voice and images with Cycle GAN<br>
                 Down below, we use satellite maps and Google Maps.<br>
                 This is the picture that created the Fake Map and the Fake Picture through Cycle GAN Architecture.<br>
-                <img src="images/AI_result.JPG" width="70%"><br>
+                <img src="images/AI_result.JPG" width="50%"><br>
                 <a href="https://drive.google.com/open?id=19ctnCXhNsumCno01Po6dchGS9vcf_jlk">Final Report download Link</a>
                 <br> <br>
             </div>
-            <h2>▶Augmented Reality<br></h2>
+
             <div class="container-fluid">
                 <h3>Miniroom Augmented Reality</h3>
 
-                <img src="images/miniroom_AR_Vuforia.png" width="30%">
-                <img src="images/miniroom_AR_Vuforia_1.png" width="32%"><br>
+                <img src="images/miniroom_AR_Vuforia.png" width="25%">
+                <img src="images/miniroom_AR_Vuforia_1.png" width="25%"><br>
 
                 <br> <br>
             </div>
