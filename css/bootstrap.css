@@ -134,6 +134,13 @@ body {
   width:300px; 
 }
 
+#project-box{
+  display: inline-block;
+  font-size: 20px; 
+  font-weight: bold;
+  width:300px; 
+}
+
 .sidebar-nav {
   width: 250px;
   margin: 0;
