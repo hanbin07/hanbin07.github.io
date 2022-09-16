@@ -11,6 +11,11 @@
             $("#sidebar-wrapper").load("SideBar.html");  // 원하는 파일 경로를 삽입하면 된다
             $("#footers").load("footer.html");  // 추가 인클루드를 원할 경우 이런식으로 추가하면 된다
         });
+
+    function scroll(){
+        window.scrollTo( 0, 1000 );
+    }
+
     </script>
 </head>
 
@@ -135,12 +140,28 @@
                     <div id ="hb-Box2">
 
                         <div id ="hb-Box3">
-                            (Two publications are under reviewed.)
-                            
+                            (One publications are under reviewed.)
+
                             <br> <br>
-                            
                             <div style = "font-size:20px;">
-                                <strong> [1] Mixing in reverse optical flow to mitigate vection and simulation sickness in virtual reality </strong> 
+                                <strong> [1] Real-Time Facial Animation Generation on Face Mask </strong> 
+                            </div>
+                            <a href="https://sa2022.siggraph.org/en/" style="color: #007bff;"> <i>ACM SIGGRAPH ASIA </i> 2022 </a> <br>
+                            <div style="font-weight:lighter;">
+                                <strong><u>Bin Han</u></strong>, Gerard Jounghyun Kim, and Jae-In Hwang <br>
+                                <a href="https://youtu.be/0lRZAbqq9hc">[Video]</a> 
+                                
+                                <br>
+                                
+                            </div> 
+
+                        </div>
+                        <img src="images/mask.gif" style="width:200px; height:130px; margin-top:-140px;"/>
+
+                        <div id ="hb-Box3">
+
+                            <div style = "font-size:20px;">
+                                <strong> [2] Mixing in reverse optical flow to mitigate vection and simulation sickness in virtual reality </strong> 
                             </div>
                             <a href="https://chi2022.acm.org/" style="color: #007bff;"> <i>CHI 2022: ACM Conference on Human Factors in Computing Systems</i> </a> <br>
                             <div style="font-weight:lighter;">
@@ -152,7 +173,7 @@
                         
                         <div id ="hb-Box3">
                             <div style = "font-size:20px;">
-                                <strong> [2] AudienceMR: Extending the Local Space for Large-Scale Audience with Mixed Reality for Enhanced Remote Lecturer Experience </strong> 
+                                <strong> [3] AudienceMR: Extending the Local Space for Large-Scale Audience with Mixed Reality for Enhanced Remote Lecturer Experience </strong> 
                             </div>
                             <a href="https://www.mdpi.com/journal/applsci" style="color: #007bff;"> <i>Applied Sciences</i> 2021 </a> <br>
                             <div style="font-weight:lighter;">
@@ -164,7 +185,7 @@
 
                         <div id ="hb-Box3">
                             <div style = "font-size:20px;"> 
-                                <strong> [3] Improving the Efficiency of Remote Healthcare using Mobile Augmented Reality </strong> 
+                                <strong> [4] Improving the Efficiency of Remote Healthcare using Mobile Augmented Reality </strong> 
                             </div> 
                             <a href="https://decisionsciences.org/annual-conferences/national-dsi/" style="color: #007bff;"> <i> Decision Sciences Institute 52nd Annual Conference</i> 2021 </a> <br>
                             <div style="font-weight:lighter;">
@@ -176,7 +197,7 @@
 
                         <div id ="hb-Box3">
                             <div style = "font-size:20px;"> 
-                                <strong>[4] A Quantitative Model to Evaluate Serendipity in Hypertext </strong>  
+                                <strong>[5] A Quantitative Model to Evaluate Serendipity in Hypertext </strong>  
                             </div>
                             <a href="https://www.mdpi.com/journal/electronics" style="color: #007bff;"> <i>Electronics</i> 2021 </a><br>
                             <div style="font-weight:lighter;">
@@ -189,7 +210,7 @@
 
                         <div id ="hb-Box3">
                             <div style = "font-size:20px;">
-                                <strong> [5] Application of Semantic Web technologies in Informatics Education </strong> 
+                                <strong> [6] Application of Semantic Web technologies in Informatics Education </strong> 
                             </div>
                             <a href="https://issep2020.tlu.ee/" style="color: #007bff;"> <i>ISSEP 2020 - International Conference on Informatics in School: Situation, Evaluation, Problems</i> </a> <br>
                             <div style="font-weight:lighter;">
@@ -201,7 +222,7 @@
 
                         <div id ="hb-Box3">
                             <div style = "font-size:20px;"> 
-                                <strong>[6] An Approach to Compute Hyperlinks on the Web of Data </strong> 
+                                <strong>[7] An Approach to Compute Hyperlinks on the Web of Data </strong> 
                             </div>
                             <i>BCPT 2020 - Basic & Clinical Pharmacology & Toxicology</i> <br>
                             <div style="font-weight:lighter;">
@@ -212,7 +233,7 @@
 
                         <div id ="hb-Box3">
                             <div style = "font-size:20px;"> 
-                                <strong>[7] 2D/3D Mixed Interface for Furniture Placement in Smartphone-based Mobile Augmented Reality </strong>
+                                <strong>[8] 2D/3D Mixed Interface for Furniture Placement in Smartphone-based Mobile Augmented Reality </strong>
                             </div>
                             <a href="https://vrst.acm.org/vrst2019/" style="color: #007bff;"> <i>VRST : Virtual Reality Software and Technology</i> 2019 </a> <br>
                             <div style="font-weight:lighter;">
@@ -226,7 +247,7 @@
 
                         <div id ="hb-Box3">
                             <div style = "font-size:20px;"> 
-                                <strong> [8] A P-NP predicate with one variable whose domain is a set of worlds </strong> 
+                                <strong> [9] A P-NP predicate with one variable whose domain is a set of worlds </strong> 
                             </div>
                             <a href="https://kgs.logic.at/goedels-legacy/sponsors" style="color: #007bff;"> <i>Gödel's Legacy: Does future lie in the past?</i> 2019 </a> <br>
                             <div style="font-weight:lighter;">
@@ -247,7 +268,7 @@
 
                         <div id ="arc-box">
                             <center>
-                                    <img src="images/Project_Vcoun.png" style="width: 250px; height:250px ;"/>     
+                                    <img src="images/Project_Vcoun.png" style="width: 250px; height:250px ;" onclick="scroll()"/>     
                             </center>
 
 
