@@ -1,11 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bin Han</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="icon" type="image/png" href="images/Bin.png"> 
     <style>
+        .about-card {
+            background-color: #fff; /* 배경색 */
+            border: 1px solid #ccc; /* 테두리 */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* 그림자 */
+            padding: 20px; /* 패딩 */
+            border-radius: 5px; /* 둥근 모서리 */
+            margin-bottom: 20px; /* 하단 여백 */
+        }
+
+        .about-header {
+            font-size: 24px; /* 제목 폰트 크기 */
+            color: #007bff; /* 제목 색상 */
+            margin-bottom: 10px; /* 제목 아래 여백 */
+        }
+
+        .about-text {
+            font-size: 16px; /* 본문 텍스트 크기 */
+            color: #666; /* 본문 텍스트 색상 */
+            line-height: 1.5; /* 줄 간격 */
+        }
+
+        .section-card {
+            background-color: #ffffff; /* White background for consistency */
+            padding: 20px; /* Padding for content inside the box */
+            margin-bottom: 20px; /* Space between sections */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+            border: 1px solid #ccc; /* Light grey border */
+        }
+
         body {
             font-family: 'Helvetica Neue', Arial, sans-serif; /* Modern and clean font */
             padding-top: 60px; /* Adjusted for fixed navbar */
@@ -59,6 +90,14 @@
             font-size: 22px; /* Larger for emphasis */
             margin-bottom: 15px; /* Less space to maintain section density */
         }
+        .footer {
+            background-color: #ffffff; /* Consistent with the navbar */
+            color: #666; /* Lighter text for a less obtrusive footer */
+            padding: 20px 0;
+            border-top: 1px solid #cccccc; /* Mirroring the navbar's bottom border */
+            text-align: center; /* Center aligns all text within the footer */
+        }
+
     </style>
     
     
@@ -89,61 +128,64 @@
             </div>
         </div>
     </nav>
-    
+
     <div id="about" class="container section">
-        <div class="text-center mt-4">
-            <img src="images/Bin.png" class="img-fluid rounded" style="max-width: 25%; height: auto;">
-            <div class="my-3">
-                <strong style="font-size: 40px; color: rgb(58, 71, 79);">Bin Han</strong>
+        <div class="about-card">
+            <div class="text-center mt-4">
+                <img src="images/Bin.png" class="img-fluid rounded" style="max-width: 20%; height: auto;">
+                <div class="my-3">
+                    <strong class="about-header">Bin Han</strong>
+                </div>
             </div>
-            <div>
+            <div class="text-center mt-4">
+
                 <a href="https://scholar.google.co.kr/citations?user=atAYaHkAAAAJ&hl=ko"><img src="images/googlescholar.png" alt="Google Scholar" style="width:35px; height:35px;"></a>
                 <a href="https://www.youtube.com/channel/UCWErT1myGZHYkf8Gr26k_9g"><img src="images/youtube.png" alt="YouTube" style="width:35px; height:30px;"></a>
                 <a href="https://github.com/hanbin07"><img src="images/github.png" alt="GitHub" style="width:35px; height:35px;"></a>
                 <a href="mailto:hanbin2297@gmail.com"><img src="images/email.png" alt="Email" style="width:35px; height:25px;"></a>
             </div>
-            <div class="mt-4 text-left" style="font-size: 18px;">
+            <div class="about-text mt-4">
                 <p>Hi! I'm Bin Han. Currently, I am in my first year as a CS Ph.D. student at the University of Southern California. I am interested in Human-Computer Interaction, Affective Computing, Virtual Reality, and Accessibility.</p>
-                <p>I hold a Bachelor's degree in Civil, Environmental, and Architectural Engineering, as well as in Computer Science and Engineering, both from Korea University. 
-                    I completed my Master's degree in Computer Science and Engineering at the same institution, 
-                    under the guidance of <a href="https://dxp.korea.ac.kr/">Professor Gerard Jounghyun Kim</a>. 
-                    Following my Master's, I contributed as a research assistant at the <a href="https://cai.kist.re.kr/">Center for Artificial Intelligence</a> 
-                    at the <a href="https://www.kist.re.kr/ko/index.do">Korea Institute of Science and Technology (KIST)</a>.</p>
-                <p style="color: #111e2c; font-weight: bold;">
-                    <i>My dream is to create a future where people with disabilities can communicate and participate in society equally, without discrimination.</i>
-                </p>
+                <p>I hold a Bachelor's degree in Civil, Environmental, and Architectural Engineering, as well as in Computer Science and Engineering, both from Korea University. I completed my Master's degree in Computer Science and Engineering at the same institution, under the guidance of <a href="https://dxp.korea.ac.kr/">Professor Gerard Jounghyun Kim</a>. Following my Master's, I contributed as a research assistant at the <a href="https://cai.kist.re.kr/">Center for Artificial Intelligence</a> at the <a href="https://www.kist.re.kr/ko/index.do">Korea Institute of Science and Technology (KIST)</a>.</p>
+                <p style="color: #111e2c; font-weight: bold;"><i>My dream is to create a future where people with disabilities can communicate and participate in society equally, without discrimination.</i></p>
             </div>
-                  
         </div>
     </div>
-    <div id="education" class="container section section-card">
-        <h3>Education</h3>
-        <ul class="list-unstyled">
-            <li>University of Southern California (PhD) - Computer Science, 2023.08 ~ Current</li>
-            <li>Korea University Graduate School (Master of Engineering) - Computer Science and Engineering, 2019.09 ~ 2021.08</li>
-            <li>Korea University (Bachelor of Science) - Computer Science and Engineering, 2015.03 ~ 2019.08</li>
-            <li>Korea University (Bachelor of Science) - Civil, Environmental, and Architectural Engineering, 2015.03 ~ 2019.08</li>
-            <li>Hansung Science High School (Early graduation), 2013.03 ~ 2015.02</li>
-        </ul>
+    
+
+    <div id="education" class="container section">
+        <div class="section-card">
+            <h3>Education</h3>
+            <ul class="list-unstyled">
+                <li>University of Southern California (PhD) - Computer Science, 2023.08 ~ Current</li>
+                <li>Korea University Graduate School (Master of Engineering) - Computer Science and Engineering, 2019.09 ~ 2021.08</li>
+                <li>Korea University (Bachelor of Science) - Computer Science and Engineering, 2015.03 ~ 2019.08</li>
+                <li>Korea University (Bachelor of Science) - Civil, Environmental, and Architectural Engineering, 2015.03 ~ 2019.08</li>
+                <li>Hansung Science High School (Early graduation), 2013.03 ~ 2015.02</li>
+            </ul>
+        </div>
     </div>
     
-    <div id="experience" class="container section section-card">
-        <h3>Experience</h3>
-        <ul class="list-unstyled">
-            <li>Research Assistant - <a href="https://emotions.ict.usc.edu/">Affective Computing Group</a>, 2023.08 ~ Current </li>
-            <li>Research Assistant - Korea Institute of Science and Technology (KIST) - <a href="https://sites.google.com/view/mrlabkist/home?authuser=0">MixedReality Lab</a>, 2021.09 ~ 2023.06</li>
-            <li>Research Assistant - <a href="https://dxp.korea.ac.kr/">Digital Experience Lab</a>, 2019.09 ~ 2021.08</li>
-            <li>Undergraduate researcher - <a href="https://dxp.korea.ac.kr/">Digital Experience Lab</a>, 2019.01 ~ 2019.08</li>
-            <li>Undergraduate researcher - Hyper Media Lab, 2017.09 ~ 2018.12</li>
-            <li>KUCC (Korea University Computer Club), 2017.03 ~ 2019.08</li>
-            <li>Korea University - KU Undergraduate researcher Program 4th, 2017.10 ~ 2018.02</li>
-            <li>Korea University - KU Undergraduate researcher Program 3rd, 2018.05 ~ 2018.11</li>
-            <li>KUDT (Korea University Dance Team), 2015.06 ~ 2016.12</li>
-            <li>KAIST IP Business education Institute for gifted - Intensive Course, 2012.03 ~ 2014.03</li>
-            <li>Science Education Institute for gifted - Seoul Seobu District Office of Education, 2012.03 ~ 2014.03</li>
-        </ul>
-    </div>
 
+    <div id="experience" class="container section">
+        <div class="section-card">
+            <h3>Experience</h3>
+            <ul class="list-unstyled">
+                <li>Research Assistant - <a href="https://emotions.ict.usc.edu/">Affective Computing Group</a>, 2023.08 ~ Current </li>
+                <li>Research Assistant - Korea Institute of Science and Technology (KIST) - <a href="https://sites.google.com/view/mrlabkist/home?authuser=0">MixedReality Lab</a>, 2021.09 ~ 2023.06</li>
+                <li>Research Assistant - <a href="https://dxp.korea.ac.kr/">Digital Experience Lab</a>, 2019.09 ~ 2021.08</li>
+                <li>Undergraduate researcher - <a href="https://dxp.korea.ac.kr/">Digital Experience Lab</a>, 2019.01 ~ 2019.08</li>
+                <li>Undergraduate researcher - Hyper Media Lab, 2017.09 ~ 2018.12</li>
+                <li>KUCC (Korea University Computer Club), 2017.03 ~ 2019.08</li>
+                <li>Korea University - KU Undergraduate researcher Program 4th, 2017.10 ~ 2018.02</li>
+                <li>Korea University - KU Undergraduate researcher Program 3rd, 2018.05 ~ 2018.11</li>
+                <li>KUDT (Korea University Dance Team), 2015.06 ~ 2016.12</li>
+                <li>KAIST IP Business education Institute for gifted - Intensive Course, 2012.03 ~ 2014.03</li>
+                <li>Science Education Institute for gifted - Seoul Seobu District Office of Education, 2012.03 ~ 2014.03</li>
+            </ul>
+        </div>
+    </div>
+    
     <div class="container mt-4 section-card">
         <h3 id="research">Research</h3>
         <div class="row">
