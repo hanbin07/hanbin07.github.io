@@ -2,404 +2,483 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>About Me</title>
-    <link rel ="stylesheet" href="css/bootstrap.css">
-    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript">
-        $(document).ready( function() {
-            $("#sidebar-wrapper").load("SideBar.html");  // 원하는 파일 경로를 삽입하면 된다
-            $("#footers").load("footer.html");  // 추가 인클루드를 원할 경우 이런식으로 추가하면 된다
-        });
-
-    function scroll(){
-        window.scrollTo( 0, 1000 );
-    }
-
-    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bin Han</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif; /* Modern and clean font */
+            padding-top: 60px; /* Adjusted for fixed navbar */
+            background: #f4f4f4; /* Light grey background */
+            color: #333; /* Dark grey text for readability */
+        }
+        .navbar {
+            background-color: #ffffff; /* White background for a clean look */
+            border-bottom: 1px solid #cccccc; /* Subtle border for a slight contrast */
+        }
+        .nav-link {
+            color: #007bff !important; /* Bright blue for links */
+            font-weight: normal; /* Normal weight for a lighter appearance */
+        }
+        .section {
+            padding: 40px 0; /* Reduced padding for a tighter layout */
+        }
+        .footer {
+            background-color: #ffffff; /* Consistent with the navbar */
+            color: #666; /* Lighter text for a less obtrusive footer */
+            padding: 20px 0;
+            border-top: 1px solid #cccccc; /* Mirroring the navbar's bottom border */
+        }
+        .card {
+            background-color: #ffffff;
+            border: none; /* Removing borders for a flatter design */
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1); /* Softer shadow for a subtle depth */
+        }
+        .card-body {
+            padding: 20px; /* More padding for better content breathing room */
+        }
+        .card-title {
+            font-size: 18px; /* Smaller font size for titles */
+            color: #007bff; /* Blue color to tie with link colors */
+        }
+        .card-text {
+            color: #666; /* Soft black for less harsh text */
+        }
+        .card-link {
+            color: #007bff; /* Consistent link color across the site */
+        }
+        .card-link:hover {
+            text-decoration: underline; /* Underline on hover for clarity */
+        }
+        mark {
+            background-color: #ffff99; /* Soft yellow for highlighting without harshness */
+            padding: 0.2em;
+        }
+        h3 {
+            color: #007bff; /* Blue to maintain consistency and interest */
+            font-size: 22px; /* Larger for emphasis */
+            margin-bottom: 15px; /* Less space to maintain section density */
+        }
+    </style>
+    
+    
+    
 </head>
-
 <body>
-<div id="page-wrapper">
-    <!-- 사이드바 -->
-    <div id="sidebar-wrapper"></div>
-
-    <!-- 본문 -->
-    <div id="page-content-wrapper">
-        <div class="container-fluid">
-
-            <h1>About Me</h1>
-             
-            <br> <br>
-
-            <center>
-                <div id ="hb-Box1">
-
-                    <div id="hb-box2">
-                
-                        <center>
-                            <img style="width: 25%; height: 25%; text-align:center; padding-bottom: 10px;" src="images/Bin.png">
-                    
-                            <div style = "font-size:40px; text-align:center; padding-bottom: 20px ;color:rgb(58, 71, 79)"> 
-                                <strong>Bin Han</strong>
-                            </div>
-
-                            <a href="https://scholar.google.co.kr/citations?user=atAYaHkAAAAJ&hl=ko"><img src="images/googlescholar.png" style="width:35px;height:35px;"/></a>
-                            <a href="https://www.youtube.com/channel/UCWErT1myGZHYkf8Gr26k_9g"><img src="images/youtube.png" style="width:35px;height:30px;"/></a>
-                            <a href="https://github.com/hanbin07"><img src="images/github.png" style="width:35px;height:35px;"/></a>
-                            <a href="mailto:hanbin2297@gmail.com"><img src="images/email.png" style="width:35px;height:25px;"/></a>
-
-                            <br> <br>
-
-                        </center>
-                            <div style = "font-size:18px;"> 
-                            
-                                Hi! my name is Bin Han<br> <br>
-                                I earned my Bachelor's degree in <strong> Civil, Environmental, and Architectural Engineering</strong>, as well as in <strong>Computer Science and Engineering</strong>, from Korea University. 
-                                I also received my Master's degree in <strong>Computer Science and Engineering</strong> from Korea University, under the guidance of <a href ="https://dxp.korea.ac.kr/">Professor. Gerard Jounghyun Kim</a>.
-                                After completing my Master's, I served as a research assistant at the <a href ="https://cai.kist.re.kr/">Center for Artificial Intelligence</a> at the <a href ="https://www.kist.re.kr/ko/index.do"> Korea Institute of Science and Technology (KIST)</a>.
-                                Currently, I am in my 1st year as a CS Ph.D. student at the University of Southern California.
-                                My primary research interests include Human-Computer Interaction, Spatial Computing (encompassing Augmented Reality and Virtual Reality), Affective Computing, Accessibility, and Deep Learning.
-                                
-                                <br>
-                                
-                                <stong>
-                                    <div style="color: #53a0f3; font-weight: bolder;">
-                                    <i>I dream of a future where people with disabilities can communicate and participate equally in society without discrimination. <br> </i>
-                                    </div>
-                                </stong>
-
-                            </div>
-                 
-                    </div>
-                    
-                </div>
-            </center>
-            
-            <br> 
-            
-            <br>
-
-            <center>
-                <div id ="hb-Box1">
-                
-                <h3>Education</h3>
-
-                    <div id ="hb-Box2">
-                        University of Southern California (PhD)- Computer Science, 2023.08 ~ Current <br>
-                    
-                        Korea University Graduate School (Master of Engineering)- Computer Science and Engineering (Software), 2019.09 ~ 2021.08 <br>
-        
-                        Korea University (Bachelor of Science) - Computer Science and Engineering (Software), 2015.03 ~ 2019.8 <br>
-        
-                        Korea University (Bachelor of Science) - Civil, Environmental and Architectural Engineering, 2015.03 ~ 2019.8 <br>
-        
-                        Hansung Science High School (Early graduation), 2013.03 ~ 2015.02 <br>
-        
-                    </div>
-
-                </div>
-            </center>
-
-            <center>
-                <div id ="hb-Box1">
-                
-                <h3>Experience</h3>
-
-                    <div id ="hb-Box2">
-                    
-                        Research Assistant - Korea Institute of Science and Technology (KIST) - <a href="https://sites.google.com/view/mrlabkist/home?authuser=0">MixedReality Lab </a> , 2021.09 ~ 2023. 06 <br>
-
-                        Research Assistant - <a href ="https://dxp.korea.ac.kr/"> Digital Experience Lab </a>, 2019.09 ~ 2021.08 <br>
-        
-                        Undergraduate researcher - <a href ="https://dxp.korea.ac.kr/"> Digital Experience Lab</a> , 2019.01 ~ 2019.08 <br>
-        
-                        Undergraduate researcher - Hyper Media Lab, 2017.09 ~ 2018.12 <br>
-                    
-                        <a herf = "https://kucc.co.kr/"> KUCC (Korea University Computer Club)</a>, 2017.03 ~ 2019.08 <br>
-        
-                        Korea University - KU Undergraduate researcher Program 4th, 2017.10 ~ 2018.02 <br>
-        
-                        Korea University - KU Undergraduate researcher Program 3rd, 2018.05 ~ 2018.11 <br>
-                    
-                        <a href="https://www.youtube.com/user/KUDTdancers">KUDT (Korea University Dance Team)</a>, 2015.06 ~ 2016.12 <br>
-        
-                        KAIST IP Business education Institute for gifted - Intensive Course, 2012.03 ~ 2014.03 <br>
-        
-                        Science Education Institute for gifted - Seoul Seobu District Office of Education, 2012.03 ~ 2014.03 <br>
-        
-                    </div>
-
-                </div>
-            </center>
-
-            <center>
-                <div id ="hb-Box1">
-                
-                <h3>Research</h3>
-
-                    <div id ="hb-Box2">
-
-                        <div id ="hb-Box3">
-                            
-                            <br> 
-                            <div style = "font-size:20px;">
-                                <strong> [1] Masked FER-2013: Dataset for Emotional Face Augmentation </strong> 
-                            </div>
-                            <a href="https://ieeevr.org/2023/" style="color: #007bff;"> <i>IEEE VR </i> 2023 </a> <br>
-                            <div style="font-weight:lighter;">
-                                <strong><u>Bin Han</u></strong>, Hanseob Kim, Gerard Jounghyun Kim, and Jae-In Hwang <br>
-                                <a href="https://dl.acm.org/doi/abs/10.1145/3550082.3564178"> [Paper Link]</a> <a href="https://youtu.be/Za3pAmMOQQs">[Video]</a> 
-                                
-
-                            </div> 
-
-                        </div>
-                        <img src="images/IEEEVR-Fig1-v2.jpg" style="width:200px; height:130px; margin-top:-80px;"/>
-
-                        <div id ="hb-Box3">
-                            
-                            <br> <br>
-                            <div style = "font-size:20px;">
-                                <strong> [2] Digital Agent’s Engagement and Affective Posture Impact Its Social Presence and Trustworthiness in Group Decision-Making </strong> 
-                            </div>
-                            <a href="https://ieeevr.org/2023/" style="color: #007bff;"> <i>IEEE VR </i> 2023 </a> <br>
-                            <div style="font-weight:lighter;">
-                                <strong><u>Bin Han</u></strong>, Hanseob Kim, Jieun Kim, Muhammad Firdaus Syawaludin, and Jae-In Hwang <br>
-                                <a href="https://dl.acm.org/doi/abs/10.1145/3550082.3564178"> [Paper Link]</a> <a href="https://youtu.be/qHU7Yjt3iBY">[Video]</a> 
-                                
-
-                            </div> 
-
-                        </div>
-                        <img src="images/multi-user.png" style="width:200px; height:130px; margin-top:-110px;"/>
-
-                        <div id ="hb-Box3">
-                            
-                            <br> <br>
-                            <div style = "font-size:20px;">
-                                <strong> [3] Real-Time Facial Animation Generation on Face Mask </strong> 
-                            </div>
-                            <a href="https://sa2022.siggraph.org/en/" style="color: #007bff;"> <i>ACM SIGGRAPH ASIA </i> 2022 </a> <br>
-                            <div style="font-weight:lighter;">
-                                <strong><u>Bin Han</u></strong>, Gerard Jounghyun Kim, and Jae-In Hwang <br>
-                                <a href="https://dl.acm.org/doi/abs/10.1145/3550082.3564178"> [Paper Link]</a> <a href="https://youtu.be/0lRZAbqq9hc">[Video]</a> 
-                                
-                                <br> <BR>
-
-                            </div> 
-
-                        </div>
-                        <img src="images/mask.gif" style="width:200px; height:130px; margin-top:-140px;"/>
-
-                        <div id ="hb-Box3">
-
-                            <div style = "font-size:20px;">
-                                <strong> [4] ASAP: Auto-generating Storyboad and Previz with Digital Humans </strong> 
-                            </div>
-                            <a href="https://sa2022.siggraph.org/en/" style="color: #007bff;"> <i>ACM SIGGRAPH ASIA</i> 2022 </a> <br>
-                            <div style="font-weight:lighter;">
-                                Hanseob Kim, Gahazanfar Ali, <strong><u>Bin Han</u></strong>, Hwangyoun Kim, Jieun Kim, and Jea-In Hwang <br>
-                                <a href="https://drive.google.com/file/d/1-4mNM_4tQHT0I7Bk51DeJuPEsXOWXzgG/view?usp=sharing">[Paper Link] </a> <a href="https://sites.google.com/view/mrlabkist/research/asap?authuser=0">[Link]</a> 
-                            </div> 
-                        </div>
-                        <img src="images/ASAP.gif" style="width:200px; height:130px; margin-top:-70px;"/>
-
-                        <div id ="hb-Box3">
-
-                            <div style = "font-size:20px;">
-                                <strong> [5] Mixing in reverse optical flow to mitigate vection and simulation sickness in virtual reality </strong> 
-                            </div>
-                            <a href="https://chi2022.acm.org/" style="color: #007bff;"> <i>CHI 2022: ACM Conference on Human Factors in Computing Systems</i> </a> <br>
-                            <div style="font-weight:lighter;">
-                                Su Han Park, <strong><u>Bin Han</u></strong>, Gerard Jounghyun Kim <br>
-                                <a href="https://dl.acm.org/doi/abs/10.1145/3491102.3501847">[Paper Link] </a> <a href="https://www.youtube.com/watch?v=6LhX6Av-9Dc">[Video]</a> 
-                            </div> 
-                        </div>
-                        <img src="images/CHI.gif" style="width:200px; height:130px; margin-top:-140px;"/>
-                        
-                        <div id ="hb-Box3">
-                            <div style = "font-size:20px;">
-                                <strong> [6] AudienceMR: Extending the Local Space for Large-Scale Audience with Mixed Reality for Enhanced Remote Lecturer Experience </strong> 
-                            </div>
-                            <a href="https://www.mdpi.com/journal/applsci" style="color: #007bff;"> <i>Applied Sciences</i> 2021 </a> <br>
-                            <div style="font-weight:lighter;">
-                                <strong><u>Bin Han</u></strong>, Gerard Jounghyun Kim <br>
-                                <a href="https://www.mdpi.com/2076-3417/11/19/9022">[Paper Link]</a> <a href="https://www.youtube.com/watch?v=idSctVJI4vo&t=127s"> [Video]</a>
-                            </div>
-                        </div>
-                        <img src="images/audience.gif" style="width:200px; height:130px; margin-top:-140px;"/>
-
-                        <div id ="hb-Box3">
-                            <div style = "font-size:20px;"> 
-                                <strong> [7] Improving the Efficiency of Remote Healthcare using Mobile Augmented Reality </strong> 
-                            </div> 
-                            <a href="https://decisionsciences.org/annual-conferences/national-dsi/" style="color: #007bff;"> <i> Decision Sciences Institute 52nd Annual Conference</i> 2021 </a> <br>
-                            <div style="font-weight:lighter;">
-                                <strong><u>Bin Han</u></strong> <br>
-                                <a href="computer/Improving the efficiency of remote healthcare using mobile Augmented Reality-0607.pdf">[Poster Link]</a>
-                            </div>
-                        </div>
-                        <img src="images/DSI.JPG" style="width:250px; height:130px; margin-top:-50px;"/>
-
-                        <div id ="hb-Box3">
-                            <div style = "font-size:20px;"> 
-                                <strong>[8] A Quantitative Model to Evaluate Serendipity in Hypertext </strong>  
-                            </div>
-                            <a href="https://www.mdpi.com/journal/electronics" style="color: #007bff;"> <i>Electronics</i> 2021 </a><br>
-                            <div style="font-weight:lighter;">
-                                Yuri Kim ,<strong><u>Bin Han</u></strong> , Jihyun Kim , Jisoo Song , Seoyeon Kang , Seongbin Park <br>
-                                <a href="https://www.mdpi.com/2079-9292/10/14/1678">[Paper Link]</a>
-                            </div> 
-                        </div>
-
-                        <img src="images/serendipity.jpg" style="width:200px; height:130px; margin-top:-50px;"/>
-
-                        <div id ="hb-Box3">
-                            <div style = "font-size:20px;">
-                                <strong> [9] Application of Semantic Web technologies in Informatics Education </strong> 
-                            </div>
-                            <a href="https://issep2020.tlu.ee/" style="color: #007bff;"> <i>ISSEP 2020 - International Conference on Informatics in School: Situation, Evaluation, Problems</i> </a> <br>
-                            <div style="font-weight:lighter;">
-                                <strong><u>Bin Han</u></strong> , Kyurhee Han , Jieun Kim , Seongbin Park <br>
-                                <a href="https://issep2020.tlu.ee/">[Paper Link]</a>
-                            </div>
-                        </div>
-                        <img src="images/semantic.JPG" style="width:200px; height:130px; margin-top:-70px;"/>
-
-                        <div id ="hb-Box3">
-                            <div style = "font-size:20px;"> 
-                                <strong>[10] An Approach to Compute Hyperlinks on the Web of Data </strong> 
-                            </div>
-                            <a href ="https://onlinelibrary.wiley.com/journal/17427843" style="color: #007bff;"><i>BCPT 2020 - Basic & Clinical Pharmacology & Toxicology</i> </a><br>
-                            <div style="font-weight:lighter;">
-                                Solgil Oh, <strong><u>Bin Han</u></strong> , Jeonghoon Park , Seongbin Park <br>
-                                <a href="https://onlinelibrary.wiley.com/doi/epdf/10.1111/bcpt.13405">[Paper Link]</a> <br>   
-                            </div>
-                        </div>
-
-                        <div id ="hb-Box3">
-                            <div style = "font-size:20px;"> 
-                                <strong>[11] 2D/3D Mixed Interface for Furniture Placement in Smartphone-based Mobile Augmented Reality </strong>
-                            </div>
-                            <a href="https://vrst.acm.org/vrst2019/" style="color: #007bff;"> <i>VRST : Virtual Reality Software and Technology</i> 2019 </a> <br>
-                            <div style="font-weight:lighter;">
-                                <strong><u>Bin Han</u></strong>, Gerard Jounghyun Kim <br>
-                                <a href="https://dl.acm.org/doi/abs/10.1145/3359996.3364715">[Paper Link]</a> <a href="https://www.youtube.com/watch?v=MqK0znjkY-Q">[Video]</a> <br>
-                            </div> 
-                        </div>
-                                
-                        
-                        <img src="images/2d.gif" style="width:200px; height:130px; margin-top:-100px;"/>
-
-                        <div id ="hb-Box3">
-                            <div style = "font-size:20px;"> 
-                                <strong> [12] A P-NP predicate with one variable whose domain is a set of worlds </strong> 
-                            </div>
-                            <a href="https://kgs.logic.at/goedels-legacy/sponsors" style="color: #007bff;"> <i>Gödel's Legacy: Does future lie in the past?</i> 2019 </a> <br>
-                            <div style="font-weight:lighter;">
-                                <strong><u>Bin Han</u></strong>, Seongbin Park <br>
-                                <a href="https://drive.google.com/file/d/1mR-abSScq0m1FVMSNQwcMxu6By2xk_l7/view?usp=sharing">[Poster Link]</a>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </center>
-
-            <center>
-                <div id ="hb-Box1">
-                    <h3>Projects</h3>
-                    <div id ="hb-Box2">
-                        
-                        <br>
-
-                        <div id ="arc-box">
-                            <center>
-                                    <img src="images/Project_Vcoun.png" style="width: 250px; height:250px ;" onclick="scroll()"/>     
-                            </center>
-
-
-                            <div style="font-size: 12px; text-align: center;"> Virtual Human Health Care System (Ongoing) </div> 
-
-
-                        </div>
-
-
-                        <div id ="arc-box">
-                            <center>
-                                <a href="https://sites.google.com/view/mrlabkist/research/asap?authuser=0">
-                                    <img src="images/Project_Kocca.png" style="width: 250px; height:250px ;"/>
-                                </a>
-                            </center>
-
-                            <div style="font-size: 12px; text-align: center;"> Text to Face animation Generation (Ongoing) </div> 
-                            
-
-                        </div>
-
-
-                        <div id ="arc-box">
-                            <center>
-                                <a href="Project.html">
-                                    <img src="images/Project_Virutal_Guitar.png" style="width: 250px; height:250px ;"/>
-                                </a>
-                            </center>
-
-                            <div style="font-size: 12px; text-align: center;"> Virtual Reality Musical Instreuments (2021) </div> 
-                        </div>
-
-                        <br> <br>
-                        
-                        <div id ="arc-box">
-                            <center>
-                            <a href="Project.html">
-                               <img src="images/Lowcost.png" style="width: 250px; height:250px ;"/>
-                            </a>
-                            </center>
-
-                            <div style="font-size: 12px; text-align: center;"> Low-cost Mobile VR Controller (2021) </div> 
-                        </div>
-
-                        <div id ="arc-box">
-                            <center>
-                            <a href="Project.html">
-                               <img src="images/VR_Liibrary.png" style="width: 250px; ;"/>
-                            </a>
-                            </center>
-
-                            <div style="font-size: 12px; text-align: center;"> Virtual Reality Library (2020) </div> 
-
-                        </div>
-
-                        <div id ="arc-box">
-                            <center>
-                                <a href="Project.html">
-                               <img src="images/Project_Interior.png" style="width: 250px; height:250px ;"/>
-                                </a>
-                            </center>
-
-                            <div style="font-size: 12px; text-align: center;"> Augmented Reality Interior System (2019) </div> 
-                            
-
-                        </div>
-
-
-
-
-                    </div>
-
-                </div>
-            </center>
-           
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">Bin Han</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#education">Education</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#experience">Experience</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#research">Research</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <div id="about" class="container section">
+        <div class="text-center mt-4">
+            <img src="images/Bin.png" class="img-fluid rounded" style="max-width: 25%; height: auto;">
+            <div class="my-3">
+                <strong style="font-size: 40px; color: rgb(58, 71, 79);">Bin Han</strong>
+            </div>
+            <div>
+                <a href="https://scholar.google.co.kr/citations?user=atAYaHkAAAAJ&hl=ko"><img src="images/googlescholar.png" alt="Google Scholar" style="width:35px; height:35px;"></a>
+                <a href="https://www.youtube.com/channel/UCWErT1myGZHYkf8Gr26k_9g"><img src="images/youtube.png" alt="YouTube" style="width:35px; height:30px;"></a>
+                <a href="https://github.com/hanbin07"><img src="images/github.png" alt="GitHub" style="width:35px; height:35px;"></a>
+                <a href="mailto:hanbin2297@gmail.com"><img src="images/email.png" alt="Email" style="width:35px; height:25px;"></a>
+            </div>
+            <div class="mt-4 text-left" style="font-size: 18px;">
+                <p>Hi! I'm Bin Han. Currently, I am in my first year as a CS Ph.D. student at the University of Southern California, where I delve into Human-Computer Interaction, Affective Computing, Virtual Reality, and Accessibility.</p>
+                <p>I hold a Bachelor's degree in Civil, Environmental, and Architectural Engineering, as well as in Computer Science and Engineering, both from Korea University. I completed my Master's degree in Computer Science and Engineering at the same institution, under the guidance of <a href="https://dxp.korea.ac.kr/">Professor Gerard Jounghyun Kim</a>. Following my Master's, I contributed as a research assistant at the <a href="https://cai.kist.re.kr/">Center for Artificial Intelligence</a> at the <a href="https://www.kist.re.kr/ko/index.do">Korea Institute of Science and Technology (KIST)</a>.</p>
+                <p style="color: #111e2c; font-weight: bold;">
+                    <i>My dream is to create a future where people with disabilities can communicate and participate in society equally, without discrimination.</i>
+                </p>
+            </div>
+                  
         </div>
     </div>
-    <!-- /본문 -->
-    <div id="footers"></div>
-</div>
+    <div id="education" class="container section section-card">
+        <h3>Education</h3>
+        <ul class="list-unstyled">
+            <li>University of Southern California (PhD) - Computer Science, 2023.08 ~ Current</li>
+            <li>Korea University Graduate School (Master of Engineering) - Computer Science and Engineering, 2019.09 ~ 2021.08</li>
+            <li>Korea University (Bachelor of Science) - Computer Science and Engineering, 2015.03 ~ 2019.08</li>
+            <li>Korea University (Bachelor of Science) - Civil, Environmental, and Architectural Engineering, 2015.03 ~ 2019.08</li>
+            <li>Hansung Science High School (Early graduation), 2013.03 ~ 2015.02</li>
+        </ul>
+    </div>
+    
+    <div id="experience" class="container section section-card">
+        <h3>Experience</h3>
+        <ul class="list-unstyled">
+            <li>Research Assistant - <a href="https://emotions.ict.usc.edu/">Affective Computing Group</a>, 2023.08 ~ Current </li>
+            <li>Research Assistant - Korea Institute of Science and Technology (KIST) - <a href="https://sites.google.com/view/mrlabkist/home?authuser=0">MixedReality Lab</a>, 2021.09 ~ 2023.06</li>
+            <li>Research Assistant - <a href="https://dxp.korea.ac.kr/">Digital Experience Lab</a>, 2019.09 ~ 2021.08</li>
+            <li>Undergraduate researcher - <a href="https://dxp.korea.ac.kr/">Digital Experience Lab</a>, 2019.01 ~ 2019.08</li>
+            <li>Undergraduate researcher - Hyper Media Lab, 2017.09 ~ 2018.12</li>
+            <li>KUCC (Korea University Computer Club), 2017.03 ~ 2019.08</li>
+            <li>Korea University - KU Undergraduate researcher Program 4th, 2017.10 ~ 2018.02</li>
+            <li>Korea University - KU Undergraduate researcher Program 3rd, 2018.05 ~ 2018.11</li>
+            <li>KUDT (Korea University Dance Team), 2015.06 ~ 2016.12</li>
+            <li>KAIST IP Business education Institute for gifted - Intensive Course, 2012.03 ~ 2014.03</li>
+            <li>Science Education Institute for gifted - Seoul Seobu District Office of Education, 2012.03 ~ 2014.03</li>
+        </ul>
+    </div>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script type="text/javascript" src="js/bootstrap.js"></script>
+    <div class="container mt-4 section-card">
+        <h3 id="research">Research</h3>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card mb-3">
+                    <div class="row no-gutters">
+                        <div class="col-md-3">
+                            <img src="images/CHI-2024-2image.gif" class="card-img" alt="chi-2024">
+                        </div>
+                        <div class="col-md-9">
+                            <div class="card-body">
+                                <h5 class="card-title"><strong>Engaged and Affective Virtual Agents: Their Impact on Social Presence, Trustworthiness, and Decision-Making in the Group Discussion</strong></h5>
+                                <p class="card-text">
+                                    Hanseob Kim, <mark style="background: #D4E6F199;"><strong>Bin Han</strong></mark>
+                                    , Jieun Kim, Muhammad Firdaus Syawaludin Lubis, Gerard Jounghyun Kim, Jae-In Hwang
+                                </p>
+                                <p class="card-text"><small class="text-muted">CHI 2024: ACM Conference on Human Factors in Computing Systems</small></p>
+                                <p class="card-text">
+                                    <a href="https://dl.acm.org/doi/full/10.1145/3613904.3642917" class="card-link">Paper</a> |
+                                    <a href="https://www.youtube.com/watch?v=aNfPIW1oad4" class="card-link">Video</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+
+
+                <div class="col-md-12">
+                    <div class="card mb-3">
+                        <div class="row no-gutters">
+                            <div class="col-md-3">
+                                <img src="images/IEEEVR-Fig1-v2.jpg" class="card-img" alt="FER-2013">
+                            </div>
+                            <div class="col-md-9">
+                                <div class="card-body">
+                                    <h5 class="card-title"><strong>Masked FER-2013: Dataset for Emotional Face Augmentation</strong></h5>
+                                    <p class="card-text">
+                                        <mark style="background: #D4E6F199;"><strong>Bin Han</strong></mark>,
+                                        Hanseob Kim, Gerard Jounghyun Kim, Jae-In Hwang
+                                    </p>
+                                    <p class="card-text"><small class="text-muted">IEEE VR 2023</small></p>
+                                    <p class="card-text">
+                                        <a href="https://dl.acm.org/doi/abs/10.1145/3550082.3564178" class="card-link">Paper</a> |
+                                        <a href="https://youtu.be/Za3pAmMOQQs" class="card-link">Video</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Additional Entries -->
+                <div class="col-md-12">
+                    <div class="card mb-3">
+                        <div class="row no-gutters">
+                            <div class="col-md-3">
+                                <img src="images/multi-user.png" class="card-img" alt="Digital Agent’s Engagement">
+                            </div>
+                            <div class="col-md-9">
+                                <div class="card-body">
+                                    <h5 class="card-title"><strong>Digital Agent’s Engagement and Affective Posture Impact Its Social Presence and Trustworthiness in Group Decision-Making</strong></h5>
+                                    <p class="card-text">
+                                        <mark style="background: #D4E6F199;"><strong>Bin Han</strong></mark>,
+                                        Hanseob Kim, Jieun Kim, Muhammad Firdaus Syawaludin, Jae-In Hwang
+                                    </p>
+                                    <p class="card-text"><small class="text-muted">IEEE VR 2023</small></p>
+                                    <p class="card-text">
+                                        <a href="https://dl.acm.org/doi/abs/10.1145/3550082.3564178" class="card-link">Paper</a> |
+                                        <a href="https://youtu.be/qHU7Yjt3iBY" class="card-link">Video</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Complete all entries in a similar fashion, I will continue with a few more examples -->
+                
+                <!-- Entry 3 -->
+                <div class="col-md-12">
+                    <div class="card mb-3">
+                        <div class="row no-gutters">
+                            <div class="col-md-3">
+                                <img src="images/mask.gif" class="card-img" alt="Real-Time Facial Animation">
+                            </div>
+                            <div class="col-md-9">
+                                <div class="card-body">
+                                    <h5 class="card-title"><strong>Real-Time Facial Animation Generation on Face Mask</strong></h5>
+                                    <p class="card-text">
+                                        <mark style="background: #D4E6F199;"><strong>Bin Han</strong></mark>,
+                                        Gerard Jounghyun Kim, Jae-In Hwang
+                                    </p>
+                                    <p class="card-text"><small class="text-muted">ACM SIGGRAPH ASIA 2022</small></p>
+                                    <p class="card-text">
+                                        <a href="https://dl.acm.org/doi/abs/10.1145/3550082.3564178" class="card-link">Paper</a> |
+                                        <a href="https://youtu.be/0lRZAbqq9hc" class="card-link">Video</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                        <!-- Entry 4 -->
+                <div class="col-md-12">
+                    <div class="card mb-3">
+                        <div class="row no-gutters">
+                            <div class="col-md-3">
+                                <img src="images/ASAP.gif" class="card-img" alt="ASAP">
+                            </div>
+                            <div class="col-md-9">
+                                <div class="card-body">
+                                    <h5 class="card-title"><strong>ASAP: Auto-generating Storyboard and Previz with Digital Humans</strong></h5>
+                                    <p class="card-text">
+                                        <mark style="background: #D4E6F199;"><strong>Bin Han</strong></mark>,
+                                        Hanseob Kim, Gahazanfar Ali, Hwangyoun Kim, Jieun Kim, Jea-In Hwang
+                                    </p>
+                                    <p class="card-text"><small class="text-muted">ACM SIGGRAPH ASIA 2022</small></p>
+                                    <p class="card-text">
+                                        <a href="https://drive.google.com/file/d/1-4mNM_4tQHT0I7Bk51DeJuPEsXOWXzgG/view?usp=sharing" class="card-link">Paper</a> |
+                                        <a href="https://sites.google.com/view/mrlabkist/research/asap?authuser=0" class="card-link">Project</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Entry 5 -->
+                <div class="col-md-12">
+                    <div class="card mb-3">
+                        <div class="row no-gutters">
+                            <div class="col-md-3">
+                                <img src="images/CHI.gif" class="card-img" alt="CHI 2022">
+                            </div>
+                            <div class="col-md-9">
+                                <div class="card-body">
+                                    <h5 class="card-title"><strong>Mixing in reverse optical flow to mitigate vection and simulation sickness in virtual reality</strong></h5>
+                                    <p class="card-text">
+                                        <mark style="background: #D4E6F199;"><strong>Bin Han</strong></mark>,
+                                        Su Han Park, Gerard Jounghyun Kim
+                                    </p>
+                                    <p class="card-text"><small class="text-muted">CHI 2022: ACM Conference on Human Factors in Computing Systems</small></p>
+                                    <p class="card-text">
+                                        <a href="https://dl.acm.org/doi/abs/10.1145/3491102.3501847" class="card-link">Paper</a> |
+                                        <a href="https://www.youtube.com/watch?v=6LhX6Av-9Dc" class="card-link">Video</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Entry 6 -->
+                <div class="col-md-12">
+                    <div class="card mb-3">
+                        <div class="row no-gutters">
+                            <div class="col-md-3">
+                                <img src="images/audience.gif" class="card-img" alt="AudienceMR">
+                            </div>
+                            <div class="col-md-9">
+                                <div class="card-body">
+                                    <h5 class="card-title"><strong>AudienceMR: Extending the Local Space for Large-Scale Audience with Mixed Reality for Enhanced Remote Lecturer Experience</strong></h5>
+                                    <p class="card-text">
+                                        <mark style="background: #D4E6F199;"><strong>Bin Han</strong></mark>,
+                                        Gerard Jounghyun Kim
+                                    </p>
+                                    <p class="card-text"><small class="text-muted">Applied Sciences 2021</small></p>
+                                    <p class="card-text">
+                                        <a href="https://www.mdpi.com/2076-3417/11/19/9022" class="card-link">Paper</a> |
+                                        <a href="https://www.youtube.com/watch?v=idSctVJI4vo&amp;t=127s" class="card-link">Video</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Entry 7 -->
+                <div class="col-md-12">
+                    <div class="card mb-3">
+                        <div class="row no-gutters">
+                            <div class="col-md-3">
+                                <img src="images/DSI.JPG" class="card-img" alt="Remote Healthcare">
+                            </div>
+                            <div class="col-md-9">
+                                <div class="card-body">
+                                    <h5 class="card-title"><strong>Improving the Efficiency of Remote Healthcare using Mobile Augmented Reality</strong></h5>
+                                    <p class="card-text">
+                                        <mark style="background: #D4E6F199;"><strong>Bin Han</strong></mark>
+                                    </p>
+                                    <p class="card-text"><small class="text-muted">Decision Sciences Institute 52nd Annual Conference 2021</small></p>
+                                    <p class="card-text">
+                                        <a href="computer/Improving the efficiency of remote healthcare using mobile Augmented Reality-0607.pdf" class="card-link">Poster Link</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Entry 8 -->
+                <div class="col-md-12">
+                    <div class="card mb-3">
+                        <div class="row no-gutters">
+                            <div class="col-md-3">
+                                <img src="images/serendipity.jpg" class="card-img" alt="Serendipity in Hypertext">
+                            </div>
+                            <div class="col-md-9">
+                                <div class="card-body">
+                                    <h5 class="card-title"><strong>A Quantitative Model to Evaluate Serendipity in Hypertext</strong></h5>
+                                    <p class="card-text">
+                                        <mark style="background: #D4E6F199;"><strong>Bin Han</strong></mark>, Yuri Kim, Jihyun Kim, Jisoo Song, Seoyeon Kang, Seongbin Park
+                                    </p>
+                                    <p class="card-text"><small class="text-muted">Electronics 2021</small></p>
+                                    <p class="card-text">
+                                        <a href="https://www.mdpi.com/2079-9292/10/14/1678" class="card-link">Paper Link</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Entry 9 -->
+                <div class="col-md-12">
+                    <div class="card mb-3">
+                        <div class="row no-gutters">
+                            <div class="col-md-3">
+                                <img src="images/semantic.JPG" class="card-img" alt="Semantic Web Technologies">
+                            </div>
+                            <div class="col-md-9">
+                                <div class="card-body">
+                                    <h5 class="card-title"><strong>Application of Semantic Web technologies in Informatics Education</strong></h5>
+                                    <p class="card-text">
+                                        <mark style="background: #D4E6F199;"><strong>Bin Han</strong></mark>, Kyurhee Han, Jieun Kim, Seongbin Park
+                                    </p>
+                                    <p class="card-text"><small class="text-muted">ISSEP 2020 - International Conference on Informatics in School: Situation, Evaluation, Problems</small></p>
+                                    <p class="card-text">
+                                        <a href="https://issep2020.tlu.ee/" class="card-link">Paper Link</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Entry 10 - Text-focused layout without image column -->
+                <div class="col-md-12">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title"><strong>An Approach to Compute Hyperlinks on the Web of Data</strong></h5>
+                            <p class="card-text">
+                                <mark style="background: #D4E6F199;"><strong>Bin Han</strong></mark>, Solgil Oh, Jeonghoon Park, Seongbin Park
+                            </p>
+                            <p class="card-text"><small class="text-muted">BCPT 2020 - Basic & Clinical Pharmacology & Toxicology</small></p>
+                            <p class="card-text">
+                                <a href="https://onlinelibrary.wiley.com/doi/epdf/10.1111/bcpt.13405" class="card-link">Paper Link</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Entry 11 -->
+                <div class="col-md-12">
+                    <div class="card mb-3">
+                        <div class="row no-gutters">
+                            <div class="col-md-3">
+                                <img src="images/2d.gif" class="card-img" alt="2D/3D Interface">
+                            </div>
+                            <div class="col-md-9">
+                                <div class="card-body">
+                                    <h5 class="card-title"><strong>2D/3D Mixed Interface for Furniture Placement in Smartphone-based Mobile Augmented Reality</strong></h5>
+                                    <p class="card-text">
+                                        <mark style="background: #D4E6F199;"><strong>Bin Han</strong></mark>, Gerard Jounghyun Kim
+                                    </p>
+                                    <p class="card-text"><small class="text-muted">VRST 2019: Virtual Reality Software and Technology</small></p>
+                                    <p class="card-text">
+                                        <a href="https://dl.acm.org/doi/abs/10.1145/3359996.3364715" class="card-link">Paper Link</a> |
+                                        <a href="https://www.youtube.com/watch?v=MqK0znjkY-Q" class="card-link">Video</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            <!-- Entry 12 - Text-focused layout without image column -->
+            <div class="col-md-12">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title"><strong>A P-NP predicate with one variable whose domain is a set of worlds</strong></h5>
+                        <p class="card-text">
+                            <mark style="background: #D4E6F199;"><strong>Bin Han</strong></mark>, Seongbin Park
+                        </p>
+                        <p class="card-text"><small class="text-muted">Gödel's Legacy: Does future lie in the past? 2019</small></p>
+                        <p class="card-text">
+                            <a href="https://drive.google.com/file/d/1mR-abSScq0m1FVMSNQwcMxu6By2xk_l7/view?usp=sharing" class="card-link">Poster Link</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+
+    
+    
+
+    <div class="footer">
+        <p>© 2024 by Bin Han</p>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("a").on('click', function(event) {
+                if (this.hash !== "") {
+                    event.preventDefault();
+                    var hash = this.hash;
+        
+                    // Calculate offset for fixed header height, adjust the '70' to your navbar's height
+                    var offset = $(hash).offset().top - 70; // Adjust this value based on your actual navbar height
+        
+                    $('html, body').animate({
+                        scrollTop: offset
+                    }, 800, function(){
+                        // Optional: add hash to URL after scrolling
+                        window.location.hash = hash;
+                    });
+                }
+            });
+        });
+        </script>
+        
+
 </body>
-
 </html>

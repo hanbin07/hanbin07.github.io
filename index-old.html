@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>About Me</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#sidebar-wrapper").load("SideBar.html");
+            $("#footers").load("footer.html");
+        });
+
+        function scroll() {
+            window.scrollTo(0, 1000);
+        }
+    </script>
+</head>
+<body>
+    <div class="container-fluid" id="page-wrapper">
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper"></div>
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <h1>About Me</h1>
+            <div class="text-center mt-4">
+                <img src="images/Bin.png" class="img-fluid rounded" style="max-width: 25%; height: auto;">
+                <div class="my-3">
+                    <strong style="font-size: 40px; color: rgb(58, 71, 79);">Bin Han</strong>
+                </div>
+                <div>
+                    <a href="https://scholar.google.co.kr/citations?user=atAYaHkAAAAJ&hl=ko"><img src="images/googlescholar.png" alt="Google Scholar" style="width:35px; height:35px;"></a>
+                    <a href="https://www.youtube.com/channel/UCWErT1myGZHYkf8Gr26k_9g"><img src="images/youtube.png" alt="YouTube" style="width:35px; height:30px;"></a>
+                    <a href="https://github.com/hanbin07"><img src="images/github.png" alt="GitHub" style="width:35px; height:35px;"></a>
+                    <a href="mailto:hanbin2297@gmail.com"><img src="images/email.png" alt="Email" style="width:35px; height:25px;"></a>
+                </div>
+                <div class="mt-4 text-left" style="font-size: 18px;">
+                    <p>Hi! my name is Bin Han</p>
+                    <p>I earned my Bachelor's degree in <strong>Civil, Environmental, and Architectural Engineering</strong>, as well as in <strong>Computer Science and Engineering</strong>, from Korea University. 
+                    I also received my Master's degree in <strong>Computer Science and Engineering</strong> from Korea University, under the guidance of <a href="https://dxp.korea.ac.kr/">Professor. Gerard Jounghyun Kim</a>.
+                    After completing my Master's, I served as a research assistant at the <a href="https://cai.kist.re.kr/">Center for Artificial Intelligence</a> at the <a href="https://www.kist.re.kr/ko/index.do">Korea Institute of Science and Technology (KIST)</a>.
+                    Currently, I am in my 1st year as a CS Ph.D. student at the University of Southern California.
+                    My primary research interests include Human-Computer Interaction, Spatial Computing (encompassing Augmented Reality and Virtual Reality), Affective Computing, Accessibility, and Deep Learning.</p>
+                    <p style="color: #53a0f3; font-weight: bold;">
+                        <i>I dream of a future where people with disabilities can communicate and participate equally in society without discrimination.</i>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+                <!-- Education Section -->
+        <div class="container mt-4">
+            <h3>Education</h3>
+            <ul class="list-unstyled">
+                <li>University of Southern California (PhD) - Computer Science, 2023.08 ~ Current</li>
+                <li>Korea University Graduate School (Master of Engineering) - Computer Science and Engineering, 2019.09 ~ 2021.08</li>
+                <li>Korea University (Bachelor of Science) - Computer Science and Engineering, 2015.03 ~ 2019.8</li>
+                <li>Korea University (Bachelor of Science) - Civil, Environmental, and Architectural Engineering, 2015.03 ~ 2019.8</li>
+                <li>Hansung Science High School (Early graduation), 2013.03 ~ 2015.02</li>
+            </ul>
+        </div>
+
+        <!-- Experience Section -->
+        <div class="container mt-4">
+            <h3>Experience</h3>
+            <ul class="list-unstyled">
+                <li>Research Assistant - Korea Institute of Science and Technology (KIST) - <a href="https://sites.google.com/view/mrlabkist/home?authuser=0">MixedReality Lab</a>, 2021.09 ~ 2023.06</li>
+                <li>Research Assistant - <a href="https://dxp.korea.ac.kr/">Digital Experience Lab</a>, 2019.09 ~ 2021.08</li>
+                <li>Undergraduate researcher - <a href="https://dxp.korea.ac.kr/">Digital Experience Lab</a>, 2019.01 ~ 2019.08</li>
+                <li>Undergraduate researcher - Hyper Media Lab, 2017.09 ~ 2018.12</li>
+                <li>KUCC (Korea University Computer Club), 2017.03 ~ 2019.08</li>
+                <li>Korea University - KU Undergraduate researcher Program 4th, 2017.10 ~ 2018.02</li>
+                <li>Korea University - KU Undergraduate researcher Program 3rd, 2018.05 ~ 2018.11</li>
+                <li>KUDT (Korea University Dance Team), 2015.06 ~ 2016.12</li>
+                <li>KAIST IP Business education Institute for gifted - Intensive Course, 2012.03 ~ 2014.03</li>
+                <li>Science Education Institute for gifted - Seoul Seobu District Office of Education, 2012.03 ~ 2014.03</li>
+            </ul>
+        </div>
+
+        <!-- Research Section -->
+        <div class="container mt-4">
+            <h3>Research</h3>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <img src="images/IEEEVR-Fig1-v2.jpg" class="img-fluid" alt="Research Image">
+                    <strong> [1] Masked FER-2013: Dataset for Emotional Face Augmentation</strong> <br>
+                    <a href="https://ieeevr.org/2023/" class="text-primary">IEEE VR 2023</a> <br>
+                    <span>Bin Han, Hanseob Kim, Gerard Jounghyun Kim, and Jae-In Hwang</span> <br>
+                    <a href="https://dl.acm.org/doi/abs/10.1145/3550082.3564178">[Paper Link]</a>
+                    <a href="https://youtu.be/Za3pAmMOQQs">[Video]</a>
+                </div>
+                <!-- More research entries similar to the above, but adjust based on the content provided -->
+            </div>
+        </div>
+
+        
+        <!-- Footer -->
+        <div id="footers"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
